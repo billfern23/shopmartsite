@@ -4,7 +4,7 @@ import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import { FaFacebook } from "react-icons/fa";
 import {useState, useEffect} from 'react'
-
+import Addform from './Addform'
 
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
     const[email, setEmail] = useState("")
     const[password, setPassword] = useState("")
     const[phone, setPhone] = useState("")
-    const[finalphone, setfinalPhone] = useState([])
+    
     const[homePhone, setHomePhone] = useState("")
     
     
@@ -44,11 +44,12 @@ const Register = () => {
     const[homephoneError, setHomePhoneError] = useState([])
     const[homephoneflag, setHomephoneflag] = useState("")
 
-  
-    useEffect(() => {
-        setfinalPhone(["monkey", "donkey"])
-        
-    }, [])
+
+   
+
+
+
+ 
    
     const validation = () =>{
         setErrors(true)
@@ -123,7 +124,7 @@ const Register = () => {
          
         }
         if(checker){
-            let initialarray  = [];
+           
             if(phone){
                 setphoneflagerror(true)
                 const regex2 = /^[0-9]+$/;
@@ -135,12 +136,11 @@ const Register = () => {
                    
                   }
                   else{
-                    initialarray.push(parseInt(phone))
+                   
                     setphoneflag("passed")
                     setPhoneError("")
-                    console.log("passed")
-                    console.log("This is the array")
-                    console.log(initialarray)
+                   
+                   
                     
                    
                   }
@@ -158,31 +158,21 @@ const Register = () => {
                    
                   }
                   else{
-                    initialarray.push(parseInt(homePhone))
-                    setHomephoneflag("passed")
                     
+                    setHomephoneflag("passed")
+                   
                     setPhoneError("")
                 
                   }
     
             }
-            console.log(`this is initial array length: ${initialarray.length}`)
-            if(initialarray.length > 0 && checker === true){
-                console.log(initialarray)
-                setfinalPhone([...finalphone, "initialarray"])
-               //setfinalPhone(initialarray)
-                console.log("trash")
-                console.log(finalphone)
-            }
+           
+          
         }
        
         return checker
      
-        
-       // = [parseInt(phone) ,parseInt(homePhone)]
-       // setfinalPhone(initialarray)
-        
-        //setfinalPhone(phone.concat(homePhone))
+    
     }
     
 
@@ -285,14 +275,22 @@ const Register = () => {
                 <Button variant="dark" size = "sm" type="button" onClick={()=>{
                     if(validation()){
                         let userss ={}
-                        console.log(finalphone.length)
-                        if(finalphone.length > 0){
+                        let initialarray  = [];
+                        if(phone){
+                            initialarray.push(parseInt(phone))
+                        }
+                        if(homePhone){
+                            initialarray.push(parseInt(homePhone))
+                        }
+                       
+                        
+                        if(homePhone || phone){
                              userss ={
                                 fname: fname,
                                 lname: lname,
                                 email: email,
                                 password: password,
-                                phone: finalphone
+                                phone: initialarray
                             }
                         } else {
                              userss ={
@@ -300,7 +298,7 @@ const Register = () => {
                                 lname: lname,
                                 email: email,
                                 password: password,
-                               
+                              
                             }
                         }
                        
