@@ -3,9 +3,9 @@ import Register from '../components/Register'
 const Registerpage = () => {
     return (
         <div>
-            <body>
+          
             <Register />
-            </body>
+            
         </div>
     )
 }

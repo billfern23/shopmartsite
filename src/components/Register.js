@@ -2,12 +2,189 @@ import '../css/Register.css'
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import { FaFacebook } from "react-icons/fa";
+import {useState, useEffect} from 'react'
 
-import {useState} from 'react'
 
 
 const Register = () => {
+
+    const[fname, setfname] = useState("")
+    const[lname, setlname] = useState("")
+    const[email, setEmail] = useState("")
+    const[password, setPassword] = useState("")
+    const[phone, setPhone] = useState("")
+    const[finalphone, setfinalPhone] = useState([])
+    const[homePhone, setHomePhone] = useState("")
+    
+    
+
     const[user, setUser] = useState(false)
+
+    
+    const[errors, setErrors] = useState(false)
+    const [phoneflagerror, setphoneflagerror] = useState(false)
+    const [homephoneflagerror, sethomephoneflagerror] = useState(false)
+    const[fnameError, setfnameError] = useState("")
+    const[fnameflag, setfnameflag] = useState("")
+  
+
+    const[lnameError, setlnameError] = useState("")
+    const[lnameflag, setlnameflag] = useState("")
+
+    const[emailError, setEmailError] = useState([])
+    const[emailflag, setlEmailflag] = useState([])
+
+    const[passwordError, setPasswordError] = useState([])
+    const[passwordflag, setpasswordflag] = useState("")
+
+    const[phoneError, setPhoneError] = useState([])
+    const[phoneflag, setphoneflag] = useState("")
+
+    const[homephoneError, setHomePhoneError] = useState([])
+    const[homephoneflag, setHomephoneflag] = useState("")
+
+  
+    useEffect(() => {
+        setfinalPhone(["monkey", "donkey"])
+        
+    }, [])
+   
+    const validation = () =>{
+        setErrors(true)
+        let checker = true
+        if(!fname){
+            setfnameError("Please enter First name")     
+            setfnameflag("failed")
+            
+            checker = false
+        }
+        else{
+            setfnameError("")     
+            setfnameflag("passed")
+                      
+            setfnameflag("passed")
+            
+        }
+
+        if(!lname){
+            setlnameError("Please enter Last name")     
+            setlnameflag("failed")
+           
+            checker = false
+        }
+        else{
+            setlnameError("")     
+            setlnameflag("passed")
+       
+         
+        }
+
+        if(!email){
+            setEmailError("Please enter Email")     
+            setlEmailflag("failed")
+             
+            checker = false
+        }
+        else{
+            const regex = /[a-z0-9]+@[a-z]+.com|.ca$/gi;
+            if (!regex.test(email)) {
+                setEmailError(`Not a real email, please enter real email`) ;
+                setlEmailflag("failed")
+              }
+              else {
+
+                  setEmailError("")     
+                  setlEmailflag("passed")
+              }
+       
+         
+        }
+
+        if(!password){
+            setPasswordError("Please enter Password")     
+            setpasswordflag("failed")
+           
+            checker = false
+        }
+        else{
+            if(password.length < 6){
+                setPasswordError("Password must be atleast 6 characters long")     
+                setpasswordflag("failed")
+            }
+            else {
+                setPasswordError("")     
+                setpasswordflag("passed")
+            }
+           
+       
+     
+       
+         
+        }
+        if(checker){
+            let initialarray  = [];
+            if(phone){
+                setphoneflagerror(true)
+                const regex2 = /^[0-9]+$/;
+                if (!regex2.test(phone)) {
+                    setPhoneError("Phone number must contain all digits")
+                   checker = false;
+                   console.log("failed")
+                   setphoneflag("failed")
+                   
+                  }
+                  else{
+                    initialarray.push(parseInt(phone))
+                    setphoneflag("passed")
+                    setPhoneError("")
+                    console.log("passed")
+                    console.log("This is the array")
+                    console.log(initialarray)
+                    
+                   
+                  }
+    
+            }
+    
+            if(homePhone){
+                sethomephoneflagerror(true)
+                const regex2 = /^[0-9]+$/;
+                if (!regex2.test(homePhone)) {
+                    setHomePhoneError("Phone number must contain all digits")
+                    
+                   checker = false;
+                   setHomephoneflag("failed")
+                   
+                  }
+                  else{
+                    initialarray.push(parseInt(homePhone))
+                    setHomephoneflag("passed")
+                    
+                    setPhoneError("")
+                
+                  }
+    
+            }
+            console.log(`this is initial array length: ${initialarray.length}`)
+            if(initialarray.length > 0 && checker === true){
+                console.log(initialarray)
+                setfinalPhone([...finalphone, "initialarray"])
+               //setfinalPhone(initialarray)
+                console.log("trash")
+                console.log(finalphone)
+            }
+        }
+       
+        return checker
+     
+        
+       // = [parseInt(phone) ,parseInt(homePhone)]
+       // setfinalPhone(initialarray)
+        
+        //setfinalPhone(phone.concat(homePhone))
+    }
+    
 
     if(user){
         
@@ -30,58 +207,178 @@ const Register = () => {
 
 
     return (
-        <Container>
-            <Row> 
-                <Col className="col-sm-8 col-md-8 col-lg-8" id="form" >
-                    <h1> Sign Up </h1>
-                <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <>
+        <Container className = "container center_div">
+  
+                    <h1 className="row justify-content-center"> Create New Account </h1>
+              
+                    <Form>
+                    <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridfName">
+                        <Form.Label>First Name*</Form.Label>
+                        <Form.Control  placeholder="First Name"
+                         value={fname}   
+                         onChange ={(event)=>{setfname(event.target.value)}}
+                         className={errors === true ? fnameflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""} 
+                        
+                        /> 
+                       <span className="error"> {fnameError}</span>
+                      
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridlName">
+                        <Form.Label>Last Name*</Form.Label>
+                        <Form.Control  placeholder="Last Name" 
+                        value={lname}
+                        onChange ={(event)=>{setlname(event.target.value)}}  
+                        
+                         className={errors === true ? lnameflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}  
+                        />
+                         <span className="error"> {lnameError}</span>
+                    </Form.Group>
+                </Row>
+                    <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridEmail">
+                            <Form.Label>Email*</Form.Label>
+                            <Form.Control type="email" placeholder=" Email" 
+                            value={email}
+                            onChange ={(event)=>{setEmail(event.target.value)}}
+                            className={errors === true ? emailflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
+                            />
+                        <span className="error"> {emailError}</span>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                </Form>
-                </Col>
-                <Col className="col-sm-2 col-md-2 col-lg-2" >
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                     <FacebookLogin  
+                        </Form.Group>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                        <Form.Label>Password*</Form.Label>
+                        <Form.Control type="password" placeholder="Password" 
+                        value={password}
+                        onChange ={(event)=>{setPassword(event.target.value)}}
+                        className={errors === true ? passwordflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
+                        />
+                         <span className="error"> {passwordError}</span>
+                    </Form.Group>
+                </Row>
+        <Row className="mb-3">
+            <Form.Group as={Col}  controlId="formGridPhone">
+                <Form.Label>Phone</Form.Label>
+                <Form.Control placeholder="Phone" 
+                value={phone}
+                onChange ={(event)=>{setPhone(event.target.value)}}
+                className={phoneflagerror === true ? phoneflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
+                />
+                 <span className="error"> {phoneError}</span>
+                 
+            </Form.Group>
+            <Form.Group as={Col}  controlId="formGridHome"> 
+                <Form.Label>Home Phone</Form.Label>
+                <Form.Control placeholder="Home Phone" 
+                   value={homePhone}
+                   onChange ={(event)=>{setHomePhone(event.target.value)}}
+                   className={homephoneflagerror === true ? homephoneflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
+            
+                />
+                            <span className="error"> {homephoneError}</span>
+
+            </Form.Group>
+            </Row>
+            <Row>
+            <div className="d-grid gap-2">
+                <Button variant="dark" size = "sm" type="button" onClick={()=>{
+                    if(validation()){
+                        let userss ={}
+                        console.log(finalphone.length)
+                        if(finalphone.length > 0){
+                             userss ={
+                                fname: fname,
+                                lname: lname,
+                                email: email,
+                                password: password,
+                                phone: finalphone
+                            }
+                        } else {
+                             userss ={
+                                fname: fname,
+                                lname: lname,
+                                email: email,
+                                password: password,
+                               
+                            }
+                        }
+                       
+
+                        fetch("http://localhost:5000/customer/register",
+                        {
+                            method:"POST",
+                            headers: {
+                                "Content-Type": "application/json",                                                                                                
+                                "Access-Control-Origin": "*"
+                            },
+                            body: JSON.stringify(userss)
+                            
+                        })
+                        .then(response => response.json())
+                        .then((data)=>{console.log(data)})
+                        .catch((err)=>{console.log(err)})
+                    }
+                    else {
+                       
+                    }
+
+                }}>
+        
+                Create Account
+            </Button>
+            </div>
+            </Row>
+        </Form>
+      
+
+       
+            <br />
+            
+            <h3>
+                <span > OR</span>
+              <br />
+              
+
+            </h3>
+
+       
+        </Container>
+        <Container >
+        <br />
+
+        <div className ="d-flex justify-content-center" >
+            <div>
+        <FacebookLogin  
                         appId="392670839185339"
                         autoLoad={false}
                         fields="name,email,picture"
                         onClick={componentClicked}
                         callback={responseFacebook}
                         className="FbButton" 
-                        textButton = "Sign in with fb" 
+                        textButton = " Continue with Facebook" 
+                        cssClass="my-facebook-button-class"
+                        icon={<FaFacebook />}
                         
-                        buttonStyle={{align:"center",width: "190px", height: "50px", textAlign:"center", fontSize: "10px"}}/>
+                        />
+                        </div>
 
-               
-                </Col>
-            </Row>
+        </div>
+
+        </Container>
+
+            
+                
+            
 
 
         
-        </Container>
+        
+
+        </>
     )
 }
+
+
 
 export default Register

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from '../Pages/Hompage'
 import Registerpage from '../Pages/Registerpage'
 import Header from './Headers'
+
 import {
   BrowserRouter as Router,
   Switch,

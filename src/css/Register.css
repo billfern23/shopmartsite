@@ -3,3 +3,43 @@
 {
     border-right: solid 1px grey;
 }
+
+
+
+h3 {
+  
+    text-align: center; 
+    border-bottom: 1px solid rgb(209, 209, 209); 
+    line-height: 0.1em;
+    
+ } 
+
+
+ h3 span { 
+    background: white; 
+   
+}
+
+#social{
+    align-self: center;
+}
+
+.my-facebook-button-class{
+    background-color:#4267b2;
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    border: 1px black;
+    padding-right:18px;
+    align-content: center;
+    align-content: stretch;
+   
+}
+
+#fb{
+    align-content: right;
+}
+
+.error{
+    color:red
+}
