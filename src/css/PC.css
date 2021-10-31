@@ -1,0 +1,12 @@
+img{
+    
+    height: calc(35vh - 0px);
+ 
+  }
+  .item:last-child {
+    max-height:100px; 
+  }
+
+  #uptop{
+    height: calc(4.5vh - 0px);
+  }

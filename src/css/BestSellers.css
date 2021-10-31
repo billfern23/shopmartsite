@@ -1,0 +1,36 @@
+.slick-arrow.slick-prev{
+
+    width: 47px;
+    height: 104px;
+  
+
+    
+
+}
+.slick-arrow.slick-next{
+   
+
+    width: 47px;
+    height: 104px;
+  
+
+
+}
+
+.slick-prev{
+    left:-20px;
+}
+.slick-next{
+    right: -70px;
+}
+
+
+
+.slick-prev::before, .slick-next::before{
+    display:none;
+    content: "";
+}
+
+.onout:hover{
+    transform: scale(1.6);
+    }

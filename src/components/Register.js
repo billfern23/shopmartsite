@@ -5,6 +5,7 @@ import FacebookLogin from 'react-facebook-login';
 import { FaFacebook } from "react-icons/fa";
 import {useState, useEffect} from 'react'
 import Addform from './Addform'
+import { MdVisibility } from 'react-icons/md';
 
 
 const Register = () => {
@@ -233,17 +234,23 @@ const Register = () => {
                             value={email}
                             onChange ={(event)=>{setEmail(event.target.value)}}
                             className={errors === true ? emailflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
-                            />
+                          />
+                          
                         <span className="error"> {emailError}</span>
 
                         </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Password*</Form.Label>
-                        <Form.Control type="password" placeholder="Password" 
+                      
+                        <Form.Control 
+                        type="password"
+                        placeholder="Password" 
                         value={password}
                         onChange ={(event)=>{setPassword(event.target.value)}}
                         className={errors === true ? passwordflag==="passed" ? "form-control is-valid" : "form-control is-invalid" : ""}
-                        />
+                        
+                       />
+
                          <span className="error"> {passwordError}</span>
                     </Form.Group>
                 </Row>
