@@ -1,9 +1,6 @@
 import React from 'react'
 
-const Addform = (props) => {
-    
-    
-    
+const ProductofCategory = () => {
     return (
         <div>
             
@@ -11,4 +8,4 @@ const Addform = (props) => {
     )
 }
 
-export default Addform
+export default ProductofCategory

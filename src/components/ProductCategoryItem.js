@@ -28,7 +28,7 @@ const Electronics = "https://images.unsplash.com/photo-1519710164239-da123dc03ef
      <div >
      <Router>
    
-     <Link to="/" style={{textDecoration: "none",
+     <Link to={`/products?category=${props.category}`} style={{textDecoration: "none",
       color: "White" ,
       fontWeight: "bold",
     

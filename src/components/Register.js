@@ -4,7 +4,7 @@ import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import { FaFacebook } from "react-icons/fa";
 import {useState, useEffect} from 'react'
-import Addform from './Addform'
+
 import { MdVisibility } from 'react-icons/md';
 
 
