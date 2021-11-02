@@ -3,7 +3,7 @@ import Header from '../components/Headers'
 import Crousel from '../components/Crousel'
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
 import ProductCategories from '../components/ProductCategories'
-import BestSeller from '../components/BestSeller'
+import BestSeller from '../components/bestSellerscarousel/BestSeller'
 import {useState, useEffect} from 'react'
 const Hompage = () => {
   const[bestSellers, setBestSellers] = useState([])

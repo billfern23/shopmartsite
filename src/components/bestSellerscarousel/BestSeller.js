@@ -1,11 +1,11 @@
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Previousbutn from "./Previousbutn.js"
-import '../css/BestSellers.css'
+import Previousbutn from "../Previousbutn.js"
+import '../../css/BestSellers.css'
 import { MdArrowForwardIos  } from "react-icons/md";
 import BestSellerCard from './BestSellerCard'
-import Nextbtn from './Nextbtn'
+import Nextbtn from '../Nextbtn'
 
 
 

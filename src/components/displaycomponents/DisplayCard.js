@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Row, Col, Button, Form   } from 'react-bootstrap';
-import {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 const ProductCard = (props) => {
 
 
@@ -13,7 +13,8 @@ const ProductCard = (props) => {
                 <Card.Text>
                 {props.description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to={`/product/${props.id}`}> 
+                <Button variant="dark" >View More Details</Button> </Link>
             </Card.Body>
             </Card>
 

@@ -3,9 +3,7 @@ import {useEffect, useState} from 'react'
 
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+
   Link
 } from "react-router-dom";
 
@@ -26,7 +24,7 @@ const Electronics = "https://images.unsplash.com/photo-1519710164239-da123dc03ef
      <br />
      <br />
      <div >
-     <Router>
+
    
      <Link to={`/products?category=${props.category}`} style={{textDecoration: "none",
       color: "White" ,
@@ -37,7 +35,7 @@ const Electronics = "https://images.unsplash.com/photo-1519710164239-da123dc03ef
     
     
     }}>{props.category} </Link>
-        </Router>
+     
         </div>
    </div>  
           

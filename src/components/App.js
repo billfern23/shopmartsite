@@ -1,17 +1,21 @@
 
-import '../css/App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from '../Pages/Hompage'
 import Registerpage from '../Pages/Registerpage'
 import Header from './Headers'
 import ProductsPage from '../Pages/Productspage'
-
+import DescriptionPage from '../Pages/DescriptionPage'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+
 } from "react-router-dom"
 function App() {
+ 
+
+ 
   return (
     <Router>
       <Switch>
@@ -23,14 +27,20 @@ function App() {
                 <Header />
             <Registerpage />
         </Route>
-        <Route  path="/products" exact>
+        <Route  path="/products" >
                 <Header />
+                
             <ProductsPage />
         </Route>
-        <Route  exact path="/products?category=" exact> 
+        <Route  path="/product/:id" exact>
                 <Header />
-         
+                < DescriptionPage />
+          
         </Route>
+       
+
+         
+    
 
       </Switch>
     </Router>
