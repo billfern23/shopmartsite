@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/Headers'
+
 import Crousel from '../components/Crousel'
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
 import ProductCategories from '../components/ProductCategories'

@@ -6,6 +6,7 @@ import DisplayMain from '../displaycomponents/DisplayMain'
 
   
 const Products = () => {
+
     const location = useLocation()
     const search = new URLSearchParams(location.search)
     const category = search.get('category')
@@ -32,18 +33,25 @@ const Products = () => {
      
   
   
-     
     
      if(category){
+        
          return (  
-            <Category category={category}/>    
+       
+        
+            <Category category={category}/> 
+       
          )
      }
 else {
 
 
     return (
+       
+       
         <DisplayMain products={products} setLoading={setLoading} />
+       
+     
     )
 }
 }

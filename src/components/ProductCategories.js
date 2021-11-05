@@ -1,16 +1,17 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
+import CategoriesContext from '../context/CategoriesContext'
 import ProductCitem from './CategoriesMain/ProductCategoryItem'
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
 
 
 const ProductCategories = () => {
 
-       
+    const{productcategory, setProductcategory} = useContext(CategoriesContext)
 
    
   
 
-    const[productcategory, setProductcategory] = useState([])
+    //const[productcategory, setProductcategory] = useState([])
     useEffect(() => {
         fetch("http://localhost:5000/products/categories")
         .then(response=> response.json())
@@ -43,7 +44,7 @@ const ProductCategories = () => {
                    </Col>
                   ))  
                          
-}
+                    }
         <Col className="col-lg-2">
                   </Col>
 </Row>

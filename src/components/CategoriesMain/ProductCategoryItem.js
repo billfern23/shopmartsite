@@ -29,12 +29,7 @@ const Electronics = "https://images.unsplash.com/photo-1519710164239-da123dc03ef
      <Link to={`/products?category=${props.category}`} style={{textDecoration: "none",
       color: "White" ,
       fontWeight: "bold",
-    
-     
-    
-    
-    
-    }}>{props.category} </Link>
+    }}>{props.category}</Link>
      
         </div>
    </div>  
