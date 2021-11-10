@@ -24,6 +24,7 @@ function App() {
       <CategoriesContext.Provider value={{productcategory,setProductcategory}} >
       <Switch>
           <Route exact path="/">
+            
               <Header />
               <Homepage />
           </Route>

@@ -4,7 +4,7 @@ const Nextbtn = (props) =>{
     
     return (
         <div className={props.className} onClick={props.onClick}>
-     <MdArrowForwardIos style={{color:'grey' , fontSize: "30px" }}/>
+     <MdArrowForwardIos style={{color:'red' , fontSize: "50px" }}/>
         </div>
     )
     }

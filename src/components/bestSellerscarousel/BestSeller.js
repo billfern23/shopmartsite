@@ -6,50 +6,72 @@ import '../../css/BestSellers.css'
 import { MdArrowForwardIos  } from "react-icons/md";
 import BestSellerCard from './BestSellerCard'
 import Nextbtn from '../Nextbtn'
+import BestSellers from "../../assests/images/Bestsellers.png"
+import { useEffect, useState } from 'react';
 
 
 
 
+const BestSeller = () => {
+
+  const[bestSellers, setBestSellers] = useState([])
+
+  useEffect(() => {
+     fetch("http://localhost:5000/products?bestseller=yes")
+     .then(response=> response.json())
+     .then(json =>{
+      setBestSellers(json.data)
+     })
+     .catch((err)=>{console.log(`err ${err}`)})
+  
+  
+  }, [])
 
 
-const BestSeller = (props) => {
+
     var settings = {
-      
+        autoplay: false,
         infinite: false,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 4,
               slidesToScroll: 3,
+              initialSlide: 1
            
             }
           },
           {
-            breakpoint: 600,
+            breakpoint: 830,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
-              initialSlide: 2
+              initialSlide: 1
             }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              initialSlide: 1
             }
           }
         ]
       };
 
     return (
-        <div style={{display:'flex', justifyContent:'center', margin:'0px' }} >
-        <div style={{width:"80%"}} >
+      
+        <div style={{display:'flex', justifyContent:'center', margin:'20px' }} >
+          
+        <div style={{width:"80%" , borderRadius:"10px"}} >
+        <span style={{color:"#EE0000", fontSize:"38px"}}>Best Sellers</span>
+        <br />
         <Slider {...settings}
     
        
@@ -59,12 +81,13 @@ const BestSeller = (props) => {
       
 
         >
-                <BestSellerCard key="" img="https://images.unsplash.com/photo-1593642702749-b7d2a804fbcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"/>
+              
             {
-                props.bestSellers.map((bestseller)=>(
+                bestSellers.map((bestseller)=>(
                     
                     <BestSellerCard 
-                    key={bestseller._id} 
+                    key={bestseller._id}
+                    id={bestseller._id} 
                     img={bestseller.picurl} 
                     category={bestseller.category}
                     title={bestseller.name}

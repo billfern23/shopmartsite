@@ -8,7 +8,7 @@ const Previousbutn =(props)=>{
         
         <div className={props.className} onClick={props.onClick}>
          
-            <MdArrowBackIos style={{color:'grey' , fontSize: "30px" }}/>
+            <MdArrowBackIos style={{color:'red' , fontSize: "50px" }}/>
             </div>
     )
 }

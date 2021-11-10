@@ -1,38 +1,29 @@
 import React from 'react'
 
-import Crousel from '../components/Crousel'
+
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
 import ProductCategories from '../components/ProductCategories'
 import BestSeller from '../components/bestSellerscarousel/BestSeller'
+import Hero from '../components/Hero'
 import {useState, useEffect} from 'react'
 const Hompage = () => {
-  const[bestSellers, setBestSellers] = useState([])
-
-  useEffect(() => {
-     fetch("http://localhost:5000/products?bestseller=yes")
-     .then(response=> response.json())
-     .then(json =>{
-      setBestSellers(json.data)
-     })
-     .catch((err)=>{console.log(`err ${err}`)})
-  
-  
-  }, [])
 
 
     return (
    <>
-       <Container>
+      
 
-              <br /> 
-            <Crousel bestSellers={bestSellers}/>
+            < Hero/>
+         
 
-       </Container>
+      
        <br /> 
+       <br />
        <ProductCategories />
        <br />
       
-       <BestSeller bestSellers={bestSellers} />
+       <BestSeller />
+     
 </>
 
     )

@@ -1,28 +1,11 @@
 import {useEffect, useState, useContext} from 'react'
 import CategoriesContext from '../context/CategoriesContext'
 import ProductCitem from './CategoriesMain/ProductCategoryItem'
-import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
-
+import { Container, Row, Col, Button, Form, Card, CardGroup   } from 'react-bootstrap';
+import '../css/Category.css'
 
 const ProductCategories = () => {
-
-    const{productcategory, setProductcategory} = useContext(CategoriesContext)
-
-   
-  
-
-    //const[productcategory, setProductcategory] = useState([])
-    useEffect(() => {
-        fetch("http://localhost:5000/products/categories")
-        .then(response=> response.json())
-        .then(json =>{
-            setProductcategory(json.categories)
-            
-        })
-        .catch((err)=>{console.log(`err ${err}`)})
-     
-     
-     }, [])
+    const{productcategory} = useContext(CategoriesContext)
 
 
     return (
@@ -30,24 +13,27 @@ const ProductCategories = () => {
          <h3> 
          
 
-                <span >Shop By Departments</span>
+                <span style={{color:"#EE0000"}}>Shop By Departments</span>
                 </h3>
               <br />
-            
-              <Row>
-              <Col className="col-lg-2">
-                  </Col>
+        <Container >
+          
+        <div style={{display:'flex', justifyContent:'center' }} >
+        <div style={{width:"90%"}} >
+          
+        <Row xs={1} md={2} lg={4} className="g-4">
               {
                   productcategory.map((category)=>(
-                     <Col className="col-lg-" align="center">
+                     
                     < ProductCitem category={category}/>
-                   </Col>
+                  
                   ))  
                          
                     }
-        <Col className="col-lg-2">
-                  </Col>
-</Row>
+                      </Row>
+                      </div>
+            </div>
+       </Container >
                        
 
                   
