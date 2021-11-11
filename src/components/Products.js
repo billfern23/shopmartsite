@@ -14,7 +14,7 @@ const Products = (history) => {
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.Products);

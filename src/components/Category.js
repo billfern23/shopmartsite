@@ -9,7 +9,7 @@ const Category = (props) => {
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products?category=${props.category}`)
+    fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.data);

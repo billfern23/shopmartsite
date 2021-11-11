@@ -38,14 +38,16 @@ const DisplayMain = (props) => {
     >
       <br />
 
-      <div style={{ background: "white", border: "1px solid black" }}>
+      <div style={{ }}>
+      <Row xs={1} sm ={2}  md={2} lg={4} className="g-2" >
         <Nav.Link
           onClick={props.turnOffFlags}
           to="/products"
           style={{
             display: "inline-block",
             color: "#C00000",
-            borderRight: "1px solid black",
+            border: "1px solid black",
+            background: "white"
           }}
         >
           All Products
@@ -55,7 +57,8 @@ const DisplayMain = (props) => {
           style={{
             display: "inline-block",
             color: "#C00000",
-            borderRight: "1px solid black",
+            border: "1px solid black",
+            background: "white"
           }}
         >
           Best sellers
@@ -66,8 +69,9 @@ const DisplayMain = (props) => {
             style={{
               display: "inline-block",
               color: "red",
-              borderRight: "1px solid black",
+              border: "1px solid black",
               paddingRight: "20px",
+              background: "white"
             }}
           >
             50% off Deals
@@ -80,7 +84,8 @@ const DisplayMain = (props) => {
           style={{
             display: "inline-block",
             color: "#C00000",
-            borderRight: "1px solid black",
+            border: "1px solid black",
+            background: "white"
           }}
         >
           <Dropdown.Toggle as={NavLink} style={{ color: "#C00000" }}>
@@ -95,10 +100,11 @@ const DisplayMain = (props) => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+        </Row>
       </div>
       <br />
 
-      <Row xs={1} md={2} lg={4} className="g-4">
+      <Row xs={1} sm ={2}  md={2} lg={4} className="g-4">
         {displayProducts.map((product) => (
           <DisplayCard
             key={product._id}

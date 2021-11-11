@@ -17,7 +17,7 @@ const ProductCard = (props) => {
             {" "}
             {props.category}
           </Card.Subtitle>
-          <Card.Text>
+         
             {props.bestSeller === true ? (
               <>
                 <AiFillStar style={{ color: "#FF9529" }} />
@@ -52,7 +52,7 @@ const ProductCard = (props) => {
             ) : (
               <div>Price: ${props.price}</div>
             )}
-          </Card.Text>
+         
         </Card.Body>
       </Card>
     </Col>

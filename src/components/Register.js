@@ -265,7 +265,7 @@ const Register = () => {
           <Row>
             <div className="d-grid gap-2">
               <Button
-                variant="dark"
+                style={{color:"white",fontWeight:"600", fontSize:"25px", background:"red", border:"1px solid red"}}
                 size="sm"
                 type="button"
                 onClick={() => {
@@ -296,7 +296,7 @@ const Register = () => {
                       };
                     }
 
-                    fetch("http://localhost:5000/customer/register", {
+                    fetch(`${process.env.REACT_APP_BACKEND}/customer/register`, {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",

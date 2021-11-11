@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { AiFillStar } from "react-icons/ai";
+import { FaStarHalfAlt } from "react-icons/fa";
 const Description = () => {
   const { id } = useParams();
 
@@ -16,7 +17,7 @@ const Description = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`${process.env.REACT_APP_BACKEND}/product/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setProduct(json.data);
@@ -29,41 +30,78 @@ const Description = () => {
   return (
     <>
       <br />
-      <span
-        style={{
-          color: "#EE0000",
-          fontWeight: "300px",
-          fontSize: "50px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        {product.category === "Electronics"
-          ? "Work Or Play..."
-          : product.category === "Clearance"
-          ? "50% Off this item"
-          : "Products"}
-      </span>
       <br />
-      <div className="border d-flex align-items-center justify-content-center">
-        <Card style={{ width: "18rem" }}>
+
+
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+            <span
+            style={{
+              color: "#EE0000",
+              fontWeight: "300px",
+              fontSize: "50px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+                 <h1>{product.name} </h1>
+              </span>  
+      </div>
+      <br />
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+  
+
+
+
+        <Card style={{ width: "50rem",  alignItems: "center",
+          justifyContent: "center" }}>
           <Card.Img variant="top" src={product.picurl} />
           <Card.Body>
-            <Card.Title> {product.name}</Card.Title>
-            <Card.Text>{product.category}</Card.Text>
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>
-              {" "}
+            <Card.Title >  {product.name}   <br /> (
+
+            
+         
+            
+       
+            <>
+              {product.bestSeller === true ? (
+                <> 
+              
+                 {Math.floor(Math.random() * 100000)} Reviews{" "}  
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                
+                  
+                </>
+              ) : 
+                <>
+                 {Math.floor(Math.random() * 100000)} Reviews
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <AiFillStar style={{ color: "#FF9529" }} />
+                  <FaStarHalfAlt style={{ color: "#FF9529" }} />
+                </>
+              }
+          </>
+            
+            
+            ) 
+            
+            </Card.Title> 
+            <Card.Text style={{fontWeigth:"700", color:"grey", }}>{product.category}</Card.Text>
+          
+         
+      <div className="  align-items-center justify-content-center"> 
+      <hr />
               <h4
                 style={{ fontWeight: "300px", font: "bold", fontSize: "20px" }}
               >
                 More about this item
               </h4>
               {product.description}
-            </ListGroupItem>
-            <ListGroupItem>
-              {" "}
+              <br />
+              
               $
               {product.category === "Clearance" ? (
                 <span
@@ -80,27 +118,18 @@ const Description = () => {
               ) : (
                 ""
               )}
+              
               {product.price}
-            </ListGroupItem>
-            <ListGroupItem>
-              {product.bestSeller === true ? (
-                <>
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                </>
-              ) : (
-                <>
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                  <AiFillStar style={{ color: "#FF9529" }} />
-                </>
-              )}
-            </ListGroupItem>
-          </ListGroup>
+              <br />
+              
+             </div>
+
+             </Card.Body>
         </Card>
+
+
+
+        
       </div>
     </>
   );

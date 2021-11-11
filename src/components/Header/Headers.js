@@ -19,7 +19,7 @@ const Headers = () => {
 
   //const[productcategory, setProductcategory] = useState([])
   useEffect(() => {
-    fetch("http://localhost:5000/products/categories")
+    fetch (`${process.env.REACT_APP_BACKEND}/products/categories`)
       .then((response) => response.json())
       .then((json) => {
         setProductcategory(json.categories);
@@ -38,7 +38,9 @@ const Headers = () => {
           textAlign: "center",
         }}
       >
-        Learn More about our Covid Return Policy
+        Learn More about our Covid Return Policy    <Link to={{ pathname: "/covidpolicy" }} style={{color:"white"}}> 
+                     Click here
+                    </Link> <br />
       </div>
 
       <Navbar collapseOnSelect expand="lg md">

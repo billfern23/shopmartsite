@@ -4,9 +4,11 @@ import Registerpage from "../Pages/Registerpage";
 import Header from "./Header/Headers";
 import ProductsPage from "../Pages/Productspage";
 import DescriptionPage from "../Pages/DescriptionPage";
+import AboutUs from "../Pages/AboutUsPage";
+import CovidPolicyPage from "../Pages/CovidPolicyPage";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import Footer from "./Footer"
 import CategoriesContext from "../context/CategoriesContext";
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/">
             <Header />
             <Homepage />
+            <Footer />
           </Route>
           <Route exact path="/register">
             <Header />
@@ -30,11 +33,26 @@ function App() {
             <Header />
 
             <ProductsPage />
+            <Footer />
           </Route>
           <Route path="/product/:id" exact>
             <Header />
             <DescriptionPage />
+            <Footer />
           </Route>
+          <Route path="/aboutus" exact>
+            <Header />
+            <AboutUs />
+
+            <Footer />
+          </Route>
+          <Route path="/covidpolicy" exact>
+            <Header />
+            <CovidPolicyPage />
+
+            <Footer />
+          </Route>
+
         </Switch>
       </CategoriesContext.Provider>
     </Router>

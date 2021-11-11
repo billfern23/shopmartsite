@@ -11,7 +11,7 @@ const BestSeller = () => {
   const [bestSellers, setBestSellers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products?bestseller=yes")
+    fetch(`${process.env.REACT_APP_BACKEND}/products?bestseller=yes`)
       .then((response) => response.json())
       .then((json) => {
         setBestSellers(json.data);
@@ -24,10 +24,10 @@ const BestSeller = () => {
   var settings = {
     autoplay: false,
     infinite: false,
-    speed: 500,
+ 
     slidesToShow: 5,
     slidesToScroll: 1,
-    initialSlide: 1,
+    initialSlide: 2,
     responsive: [
       {
         breakpoint: 1024,
