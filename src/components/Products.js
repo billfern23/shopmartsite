@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import Category from './Category'
-import {useLocation, withRouter } from "react-router-dom"
+import {useLocation } from "react-router-dom"
 import DisplayMain from './displaycomponents/DisplayMain'
-import { FaLaptopHouse } from 'react-icons/fa'
+
 
 
   
@@ -17,7 +17,7 @@ const Products = (history) => {
     const [flagClearance, setFlagClearance] = useState(false)
     const [bestSellerProducts, setbestSellerProducts ] = useState([])
     const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false)
-    const [flag, setflag] = useState(true)
+  
     useEffect(() => {
        
         fetch("http://localhost:5000/products")
@@ -137,7 +137,7 @@ else {
             clearance={clearance} 
             bestsellers={bestsellers}
             turnOffFlags={turnOffFlags}
-            flag = {flag}
+            flag = {true}
             flagClearance ={flagClearance}
             flagbestSellerProducts ={flagbestSellerProducts}
             /> 

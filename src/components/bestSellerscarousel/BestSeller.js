@@ -3,10 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Previousbutn from "../Previousbutn.js"
 import '../../css/BestSellers.css'
-import { MdArrowForwardIos  } from "react-icons/md";
 import BestSellerCard from './BestSellerCard'
 import Nextbtn from '../Nextbtn'
-import BestSellers from "../../assests/images/Bestsellers.png"
 import { useEffect, useState } from 'react';
 
 
@@ -35,7 +33,7 @@ const BestSeller = () => {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
-        initialSlide: 0,
+        initialSlide: 1,
         responsive: [
           {
             breakpoint: 1024,

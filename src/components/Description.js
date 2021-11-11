@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import { Card, Row, Col, Button, Form, Container, ListGroup, ListGroupItem   } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem   } from 'react-bootstrap';
 import { AiFillStar } from "react-icons/ai";
 const Description = () => {
     const {id} = useParams();
@@ -22,14 +22,14 @@ const[product, setProduct] = useState({
         .then(response=> response.json())
         .then(json =>{
             setProduct(json.data)
-            console.log(json.data)
+            
             
           
         })
         .catch((err)=>{console.log(`err ${err}`)})
      
      
-     }, [])
+     }, [id])
 
     return (
         <>

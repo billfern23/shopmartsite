@@ -1,5 +1,5 @@
-import { ListGroup, ListGroupItem, Card, Button, Form, Image, Col, Nav    } from 'react-bootstrap';
-import {useEffect, useState} from 'react'
+import {  Card,  Image, Col    } from 'react-bootstrap';
+
 import halfoff from '../../assests/images/50.png'
 import React from "react";
 import {
@@ -9,7 +9,7 @@ import {
 
 const ProductCategoryItem = (props) => {
    
-const Electronics = "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+
      
    
     return (

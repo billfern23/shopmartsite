@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react'
-import { Card, Row, Col, Button, Form   } from 'react-bootstrap';
+
+import { Card,  Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import { AiFillStar } from "react-icons/ai";
 const ProductCard = (props) => {
@@ -36,7 +36,7 @@ const ProductCard = (props) => {
                  :  <br />
              }
              {
-                 props.category == "Clearance" ? 
+                 props.category === "Clearance" ? 
                  <>
                
                  <div>

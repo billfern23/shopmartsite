@@ -1,7 +1,7 @@
-import {useEffect, useState, useContext} from 'react'
+import {useContext} from 'react'
 import CategoriesContext from '../context/CategoriesContext'
 import ProductCitem from './CategoriesMain/ProductCategoryItem'
-import { Container, Row, Col, Button, Form, Card, CardGroup   } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import '../css/Category.css'
 
 const ProductCategories = () => {

@@ -1,16 +1,16 @@
 import DisplayCard from './DisplayCard'
 import {useState, useEffect} from 'react'
 import Pagination from './Pagination'
-import bg from '../../assests/images/bg.png'
+
 import {  useLocation} from "react-router-dom"
-import { Container, Row, Col, Button, Form, Dropdown, NavItem, NavLink, Nav, Navbar   } from 'react-bootstrap';
+import { Container, Row,  Dropdown, NavItem, NavLink, Nav   } from 'react-bootstrap';
 const DisplayMain = (props) => {
     
     const {products} = props
     const location = useLocation()
     const [currentPage, setCurrentPage] = useState(1)
-    const [productsperPage, setProductsPerPage] = useState(8)
-    const [loading, setLoading] = useState(false)
+    const [productsperPage] = useState(8)
+    
 
     const indexLastProduct = currentPage * productsperPage;
     const indexFirstProduct = indexLastProduct - productsperPage;

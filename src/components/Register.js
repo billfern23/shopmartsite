@@ -1,11 +1,10 @@
 import '../css/Register.css'
 import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
-import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import { FaFacebook } from "react-icons/fa";
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
-import { MdVisibility } from 'react-icons/md';
+
 
 
 const Register = () => {

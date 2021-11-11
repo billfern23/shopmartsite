@@ -1,16 +1,12 @@
 
-import { Image, InputGroup, Navbar, Container, Nav, NavDropdown, Form, FormControl, Button, Row, Col } from 'react-bootstrap';
+import { Image, InputGroup, Navbar, Container, Nav, Form,  Button,  Col } from 'react-bootstrap';
 import { FaSearch } from "react-icons/fa";
 import { Link} from "react-router-dom"
 import Logo from '../../assests/images/Logo2.png'
-import {useEffect, useState,useContext } from 'react'
+import {useEffect,useContext } from 'react'
 import CategoriesContext from '../../context/CategoriesContext'
 
 const Headers = () => {
-
-
-  const[buttonColor, setButtonColor] = useState(false)
-  
 
   const{productcategory, setProductcategory} = useContext(CategoriesContext)
 
@@ -28,7 +24,7 @@ const Headers = () => {
       .catch((err)=>{console.log(`err ${err}`)})
    
    
-   }, [])
+   }, [setProductcategory])
 
 
 
@@ -48,8 +44,7 @@ const Headers = () => {
 
 
 
-<Navbar collapseOnSelect expand="lg" expand="md"   >
-    
+<Navbar collapseOnSelect expand="lg md"   >
 
 <Container fluid>
 
@@ -69,8 +64,7 @@ const Headers = () => {
         <InputGroup >
        
   
-        <Form.Control  type="text"
-         
+        <Form.Control       
           type="search"
           placeholder="Search Products..."
           className="me-2"

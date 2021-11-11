@@ -8,7 +8,7 @@ const Category = (props) => {
     const [flagClearance, setFlagClearance] = useState(false)
     const [bestSellerProducts, setbestSellerProducts ] = useState([])
     const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false)
-    const [flag, setflag] = useState(false)
+
     useEffect(() => {
        
         
@@ -17,7 +17,6 @@ const Category = (props) => {
         .then(json =>{
             setProducts(json.data)
            
-            console.log(products)
           
         })
         .catch((err)=>{console.log(`err ${err}`)})
@@ -28,7 +27,7 @@ const Category = (props) => {
      const ascending = ()  =>{
          let ascending = []
         if(flagbestSellerProducts){
-            console.log("Best product")
+        
             ascending = bestSellerProducts.sort((product1,product2)=> (product1.price > product2.price ? 1 : -1))
             setbestSellerProducts([...ascending])
         }
@@ -46,7 +45,7 @@ const Category = (props) => {
    const descending = ()  =>{
     let descending = []
     if(flagbestSellerProducts){
-        console.log("Best product")
+       
         descending = bestSellerProducts.sort((product1,product2)=> (product1.price > product2.price ? 1 : -1)).reverse()
         setbestSellerProducts([...descending])
     }
@@ -95,7 +94,7 @@ const turnOffFlags = () =>{
       <br />
         <DisplayMain products={
             flagbestSellerProducts === true ? bestSellerProducts : products} ascending={ascending} descending={descending}
-            flag={flag}
+            flag={false}
         bestsellers={bestsellers}
         turnOffFlags={turnOffFlags}
         flagClearance ={flagClearance}
