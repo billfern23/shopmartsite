@@ -1,0 +1,19 @@
+
+.pagination > li > a{
+    background-color: red;
+    color: white
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li  > span:hover
+{
+    color: red;
+    background-color:white;
+    border-color: red solid 1px;
+}
+.pagination > .active > a{
+    color:red;
+    background-color: white;
+    border: solid 1px red
+}

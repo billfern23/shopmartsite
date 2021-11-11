@@ -106,9 +106,10 @@ const Headers = () => {
   </Navbar>
 
   <Nav fill variant="tabs" defaultActiveKey="/" style={{backgroundColor:"#C00000"}}>
-  {
+  { 
         productcategory.map((category)=>(
-          <Nav.Item style={{borderBottom: "#830000 solid 0.5px", borderTop:"#830000 solid 0.5px"}}>
+         
+          <Nav.Item key={Math.floor(Math.random() *100000)} style={{borderBottom: "#830000 solid 0.5px", borderTop:"#830000 solid 0.5px"}}>
           <Nav.Link style={{color:"white",   fontWeight: "bold"}} as={Link} to ={`/products?category=${category}`}>{category}</Nav.Link>
           </Nav.Item>
   ))

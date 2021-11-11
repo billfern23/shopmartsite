@@ -1,5 +1,6 @@
 import PaginationItem from "./PaginationItem"
 import { Pagination, Row, Col, Button, Form   } from 'react-bootstrap';
+import '../../css/Pagination.css'
 const PaginationCard = (props) => {
     const TotalPages = Math.ceil(props.products.length/ props.productsperPage)
     const totalPagesArray= []
@@ -9,9 +10,15 @@ const PaginationCard = (props) => {
     
 
     return (
-        <Pagination>
-             <Pagination.First onClick={()=>{props.changePage(totalPagesArray[0])}}/>
-        <Pagination.Prev onClick={()=>{props.changePage(
+       
+<div style={{ display: "flex", justifyContent: "center"}}>
+        
+        <Pagination   >
+             <Pagination.First 
+             
+             onClick={()=>{props.changePage(totalPagesArray[0])}}/>
+        <Pagination.Prev 
+        onClick={()=>{props.changePage(
             
             props.currentpage-1 === 0 ? props.currentpage :props.currentpage-1  )
             
@@ -36,6 +43,7 @@ const PaginationCard = (props) => {
     <Pagination.Last onClick={()=>{props.changePage(totalPagesArray[totalPagesArray.length-1])}}/>
             
      </Pagination>
+     </div>
     )
 }
 

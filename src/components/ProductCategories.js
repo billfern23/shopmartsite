@@ -21,11 +21,11 @@ const ProductCategories = () => {
         <div style={{display:'flex', justifyContent:'center' }} >
         <div style={{width:"90%"}} >
           
-        <Row xs={1} md={2} lg={4} className="g-4">
+        <Row xs={1} md={2} lg={5} className="g-4">
               {
                   productcategory.map((category)=>(
                      
-                    < ProductCitem category={category}/>
+                    < ProductCitem key={Math.floor(Math.random() *100000)} category={category}/>
                   
                   ))  
                          

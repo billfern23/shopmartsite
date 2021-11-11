@@ -1,18 +1,30 @@
 import DisplayCard from './DisplayCard'
 import {useState, useEffect} from 'react'
 import Pagination from './Pagination'
-import { Container, Row, Col, Button, Form   } from 'react-bootstrap';
+import bg from '../../assests/images/bg.png'
+import {  useLocation} from "react-router-dom"
+import { Container, Row, Col, Button, Form, Dropdown, NavItem, NavLink, Nav, Navbar   } from 'react-bootstrap';
 const DisplayMain = (props) => {
     
     const {products} = props
+    const location = useLocation()
     const [currentPage, setCurrentPage] = useState(1)
-    const [productsperPage, setProductsPerPage] = useState(6)
+    const [productsperPage, setProductsPerPage] = useState(8)
     const [loading, setLoading] = useState(false)
 
     const indexLastProduct = currentPage * productsperPage;
     const indexFirstProduct = indexLastProduct - productsperPage;
     const displayProducts = products.slice(indexFirstProduct,indexLastProduct )
-
+  
+    useEffect(() => {
+       
+  setCurrentPage(1)
+     
+     
+     }, [location, props.flagClearance, props.flagbestSellerProducts])
+     
+  
+   
     const changePage=(number) =>{
         setCurrentPage(number)
         
@@ -20,9 +32,48 @@ const DisplayMain = (props) => {
 
 
     return (
-       
-        <Container >
-              <div className="row align-items-center">
+        <Container style={{
+            background: "linear-gradient(rgba(250,1,2,0.2),transparent)",
+            backgroundColor: "#F9EFF5"
+        
+        }} >
+            <br />
+           
+
+
+
+            <div style={{background:"white", border:"1px solid black"}}>
+           
+        
+            
+            <Nav.Link    onClick={props.turnOffFlags}   to ="/products" 
+             style={{display:"inline-block", color:"#C00000", borderRight:"1px solid black"}}>
+                All Products
+                </Nav.Link>
+            <Nav.Link  onClick={props.bestsellers}  style={{display:"inline-block", color:"#C00000", borderRight:"1px solid black"}}>
+                Best sellers
+                </Nav.Link>
+            { props.flag === true ? <Nav.Link   onClick={props.clearance}   
+            style={{display:"inline-block", color:"red", borderRight:"1px solid black", paddingRight:"20px"}}>
+                50% off Deals
+                </Nav.Link>
+                : ""}
+                <Dropdown as={NavItem} style={{display:"inline-block", color:"#C00000", borderRight:"1px solid black"}}>
+            <Dropdown.Toggle as={NavLink} style={{color:"#C00000"}}>Filter by Price</Dropdown.Toggle>
+                <Dropdown.Menu>
+                <Dropdown.Item onClick={props.ascending}>Lowest to Highest</Dropdown.Item>
+                <Dropdown.Item onClick={props.descending}>Highest to Lowest</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>
+
+             
+                
+         
+            </div>
+            <br />
+    
+
+              <Row xs={1} md={2} lg={4} className="g-4">
  
           
            {
@@ -37,17 +88,21 @@ const DisplayMain = (props) => {
                 description={product.description}
                 img = {product.picurl}
                 id ={product._id}
+                bestSeller = {product.bestSeller}
                 currentpage ={currentPage}
                 />
             
             )) 
             
         }
-        </div>
+        </Row>
+        <br />
+    
         <Pagination products={products}
          productsperPage={productsperPage}
           changePage={changePage} 
-          currentpage={currentPage}/>
+          currentpage={currentPage}
+          />
         </Container>
         
     )

@@ -12,9 +12,12 @@ const BestSellerCard = (props) => {
   
           
  
-              <img src={props.img} alt="" style={{width:'100%', height:'120px', paddingTop:"20px", objectFit:'contain'}}/>
+              <img src={props.img} alt=""
+               style={{width:'100%', height:'120px', paddingTop:"20px", objectFit:'contain'}}
+               
+               />
               <p style={{fontWeight:"500", fontSize:"17px"}}>{props.title}   </p>
-                    <p style={{fontSize:'14px', color:"black"}}>
+                    <p style={{fontSize:'14px', color:"black"}} >
                         
                     </p>
                     <p style={{fontSize:'14px', color: 'grey', fontWeight:"500"}}>
