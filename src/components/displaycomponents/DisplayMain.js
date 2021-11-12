@@ -98,6 +98,10 @@ const DisplayMain = (props) => {
             <Dropdown.Item onClick={props.descending}>
               Highest to Lowest
             </Dropdown.Item>
+            <Dropdown.Item onClick={props.clearAllFilter}>
+              Clear Filter
+            </Dropdown.Item>
+            
           </Dropdown.Menu>
         </Dropdown>
         </Row>

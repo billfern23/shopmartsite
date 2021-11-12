@@ -12,13 +12,14 @@ const Products = (history) => {
   const [flagClearance, setFlagClearance] = useState(false);
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
-  
-
+  const [tempArrayProducts, setTempArrayProducts] = useState([])
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.Products);
+        setTempArrayProducts(json.Products)
+        
         setFlagClearance(false);
         setFlagbestSellerProducts(false);
       })
@@ -40,10 +41,10 @@ const Products = (history) => {
       );
       setbestSellerProducts([...ascending]);
     } else {
-      ascending = products.sort((product1, product2) =>
+      ascending = tempArrayProducts.sort((product1, product2) =>
         product1.price > product2.price ? 1 : -1
       );
-      setProducts([...ascending]);
+      setTempArrayProducts([...ascending]);
     }
   };
 
@@ -64,12 +65,12 @@ const Products = (history) => {
         .reverse();
       setbestSellerProducts([...descending]);
     } else {
-      descending = products
+      descending = tempArrayProducts
         .sort((product1, product2) =>
           product1.price > product2.price ? 1 : -1
         )
         .reverse();
-      setProducts([...descending]);
+        setTempArrayProducts([...descending]);
     }
   };
 
@@ -97,9 +98,24 @@ const Products = (history) => {
   const turnOffFlags = () => {
     setFlagClearance(false);
     setFlagbestSellerProducts(false);
-    const tempProducts = products;
-    setProducts([...tempProducts]);
+
+  
+    setTempArrayProducts([...products]);
   };
+
+  const clearAllFilter = () => {
+
+    if(flagClearance){
+      clearance()
+    }
+    else if(flagbestSellerProducts){
+      bestsellers()
+    }
+    else {
+    
+      setTempArrayProducts([...products]);
+    }
+  }
   if (category) {
     return <Category category={category} />;
   } else {
@@ -127,7 +143,7 @@ const Products = (history) => {
               ? clearanceProducts
               : flagbestSellerProducts === true
               ? bestSellerProducts
-              : products
+              : tempArrayProducts
           }
           ascending={ascending}
           descending={descending}
@@ -137,6 +153,7 @@ const Products = (history) => {
           flag={true}
           flagClearance={flagClearance}
           flagbestSellerProducts={flagbestSellerProducts}
+          clearAllFilter={clearAllFilter}
         />
       </>
     );

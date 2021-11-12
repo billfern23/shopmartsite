@@ -9,14 +9,15 @@ const Category = (props) => {
   const [flagClearance, setFlagClearance] = useState(false);
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
-  const [flagAscending, setflagAscending] = useState(false);
-  const [flagDescending, setflagDescending] = useState(false);
+  const [tempArrayProducts, setTempArrayProducts] = useState([])
+  
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.data);
+        setTempArrayProducts(json.data);
         setFlagbestSellerProducts(false)
       })
       .catch((err) => {
@@ -35,10 +36,10 @@ const Category = (props) => {
       setbestSellerProducts([...ascending]);
       
     } else {
-      ascending = products.sort((product1, product2) =>
+      ascending = tempArrayProducts.sort((product1, product2) =>
         product1.price > product2.price ? 1 : -1
       );
-      setProducts([...ascending]);
+      setTempArrayProducts([...ascending]);
     }
    
   };
@@ -55,12 +56,12 @@ const Category = (props) => {
       setbestSellerProducts([...descending]);
      
     } else {
-      descending = products
+      descending = tempArrayProducts
         .sort((product1, product2) =>
           product1.price > product2.price ? 1 : -1
         )
         .reverse();
-      setProducts([...descending]);
+        setTempArrayProducts([...descending]);
     }
   
   };
@@ -78,9 +79,22 @@ const Category = (props) => {
   const turnOffFlags = () => {
     setFlagClearance(false);
     setFlagbestSellerProducts(false);
-    const tempProducts = products;
-    setProducts([...tempProducts]);
+    
+    setTempArrayProducts([...products]);
   };
+
+
+  const clearAllFilter = () => {
+
+  
+     if(flagbestSellerProducts){
+      bestsellers()
+    }
+    else {
+    
+      setTempArrayProducts([...products]);
+    }
+  }
 
   return (
     <>
@@ -102,7 +116,7 @@ const Category = (props) => {
       <br />
       <DisplayMain
         products={
-          flagbestSellerProducts === true ? bestSellerProducts : products
+          flagbestSellerProducts === true ? bestSellerProducts : tempArrayProducts
         }
         ascending={ascending}
         descending={descending}
@@ -111,8 +125,7 @@ const Category = (props) => {
         turnOffFlags={turnOffFlags}
         flagClearance={flagClearance}
         flagbestSellerProducts={flagbestSellerProducts}
-        flagDescending={flagDescending}
-          flagAscending={flagAscending}
+      clearAllFilter={clearAllFilter}
       />
     </>
   );
