@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import DisplayMain from "./displaycomponents/DisplayMain";
-
 import { useLocation } from "react-router-dom";
 
 const Category = (props) => {
