@@ -29,7 +29,7 @@ const ProductCard = (props) => {
                 <br />
               </>
             ) : (
-              <br />
+              ""
             )}
             {props.category === "Clearance" ? (
               <>
@@ -48,11 +48,13 @@ const ProductCard = (props) => {
                   </span>
                   ${props.price}
                 </div>
-                <br />
+              
               </>
             ) : (
               <div>Price: ${props.price}</div>
             )}
+
+            {props.category === "Clearance" ? props.bestSeller === true ? "" : <br /> : ""}
          
         </Card.Body>
       </Card>
