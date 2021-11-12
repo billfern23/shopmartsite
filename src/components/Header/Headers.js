@@ -7,6 +7,7 @@ import {
   Form,
   Button,
   Col,
+  Row
 } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -43,64 +44,84 @@ const Headers = () => {
                     </Link> <br />
       </div>
 
-      <Navbar collapseOnSelect expand="lg md">
-        <Container fluid>
-          <Navbar.Brand as={Link} to="/">
-            <Col lg={1} md={2} sm={1} xs={2}>
-              <Image src={Logo} style={{ width: "40vh", height: "30vh" }} />
-            </Col>
-          </Navbar.Brand>
 
-          <Col lg={7} md={5} sm={5} xs={10}>
-            <div
-              style={{
-                border: "red 1px solid",
-                borderRadius: "10px",
-                backgroundColor: "red",
-              }}
-            >
-              <Form className="">
-                <InputGroup>
-                  <Form.Control
-                    type="search"
-                    placeholder="Search Products..."
-                    className="me-2"
-                    aria-label="Search"
-                    style={{ border: "red 1px solid", borderRadius: "10px" }}
-                  />
-                  <Button variant="outline-danger">
-                    {" "}
-                    {<FaSearch style={{ color: "white" }} />}
-                  </Button>
-                </InputGroup>
-              </Form>
-            </div>
-          </Col>
+      <Row className="g-4"> 
 
-          <Col lg={2} md={3} sm={3} xs={5}>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+<Navbar collapseOnSelect expand="lg md xxl">
+<Navbar.Brand as={Link} to="/">
+  <Col xs={5} sm ={2}  md={5} lg={5} xl ={4}	xxl ={4} >
+  <Image src={Logo} style={{ width: "28vh", height: "30vh" }} />
+  </Col>
+  </Navbar.Brand>
+  <Col xs={8} sm ={5}  md={4} lg={4} xl ={4}	xxl ={4}>
+  <div
+    style={{
+      border: "red 1px solid",
+      borderRadius: "10px",
+      backgroundColor: "red",
+      width:"100%",
+      
+    }}
+  >
+    <Form className="">
+      <InputGroup>
+        <Form.Control
+          type="search"
+          placeholder="Search Products..."
+          className="me-2"
+          aria-label="Search"
+          style={{ border: "red 1px solid", borderRadius: "10px" }}
+        />
+        <Button variant="outline-danger">
+          {" "}
+          {<FaSearch style={{ color: "white" }} />}
+        </Button>
+      </InputGroup>
+    </Form>
+    
+  </div>
+ 
+  </Col>
+  <Col>
 
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link
-                  as={Link}
-                  to="/Register"
-                  style={{ color: "#EE0000", fontWeight: "bold" }}
-                >
-                  Register
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/products"
-                  style={{ color: "#EE0000", fontWeight: "bold" }}
-                >
-                  Products
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Col>
-        </Container>
-      </Navbar>
+  </Col>
+
+  <Col xs={3} sm ={2}  md={2} lg={3} xl ={4}	xxl ={4}>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+  <Navbar.Collapse id="responsive-navbar-nav">
+
+    <Nav className="me-auto">
+    <Row>
+      <Nav.Link
+        as={Link}
+        to="/Register"
+        style={{ color: "#EE0000", fontWeight: "bold", fontSize:"20px", paddingRight:"75px" }}
+      >
+        Register
+      </Nav.Link>
+      </Row>
+      <Row>
+      <Nav.Link
+        as={Link}
+        to="/products"
+        style={{ color: "#EE0000", fontWeight: "bold",  fontSize:"20px" }}
+      >
+        Products
+      </Nav.Link>
+          </Row>
+    </Nav>
+  </Navbar.Collapse>
+  
+  
+  </Col>
+
+</Navbar>
+
+</Row>
+
+     
+
 
       <Nav
         fill
