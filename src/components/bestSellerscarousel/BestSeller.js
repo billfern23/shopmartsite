@@ -30,9 +30,9 @@ const BestSeller = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 3,
           initialSlide: 1,
         },
@@ -75,6 +75,7 @@ const BestSeller = () => {
   };
 
   return (
+    
     <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
       <div style={{ width: "80%", borderRadius: "10px" }}>
         <span style={{ color: "#EE0000", fontSize: "38px" }}>Best Sellers</span>

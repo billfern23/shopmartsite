@@ -104,7 +104,7 @@ const DisplayMain = (props) => {
       </div>
       <br />
 
-      <Row xs={1} sm ={2}  md={2} lg={4} className="g-4">
+      <Row xs={1} sm ={2}  md={2} lg={3} xl ={4}	xxl ={4}className="g-4">
       
         {displayProducts.map((product) => (
           <DisplayCard
