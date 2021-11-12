@@ -1,40 +1,50 @@
 import { useEffect, useState } from "react";
 import DisplayMain from "./displaycomponents/DisplayMain";
 
+import { useLocation } from "react-router-dom";
+
 const Category = (props) => {
   const [products, setProducts] = useState([]);
-
+  const location = useLocation();
   const [flagClearance, setFlagClearance] = useState(false);
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
+  const [flagAscending, setflagAscending] = useState(false);
+  const [flagDescending, setflagDescending] = useState(false);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.data);
+        setFlagbestSellerProducts(false)
       })
       .catch((err) => {
         console.log(`err ${err}`);
       });
-  }, [props.category]);
+  }, [props.category, location]);
 
   const ascending = () => {
+    
     let ascending = [];
     if (flagbestSellerProducts) {
       ascending = bestSellerProducts.sort((product1, product2) =>
         product1.price > product2.price ? 1 : -1
+        
       );
       setbestSellerProducts([...ascending]);
+      
     } else {
       ascending = products.sort((product1, product2) =>
         product1.price > product2.price ? 1 : -1
       );
       setProducts([...ascending]);
     }
+   
   };
 
   const descending = () => {
+    
     let descending = [];
     if (flagbestSellerProducts) {
       descending = bestSellerProducts
@@ -43,6 +53,7 @@ const Category = (props) => {
         )
         .reverse();
       setbestSellerProducts([...descending]);
+     
     } else {
       descending = products
         .sort((product1, product2) =>
@@ -51,6 +62,7 @@ const Category = (props) => {
         .reverse();
       setProducts([...descending]);
     }
+  
   };
 
   const bestsellers = () => {
@@ -99,6 +111,8 @@ const Category = (props) => {
         turnOffFlags={turnOffFlags}
         flagClearance={flagClearance}
         flagbestSellerProducts={flagbestSellerProducts}
+        flagDescending={flagDescending}
+          flagAscending={flagAscending}
       />
     </>
   );

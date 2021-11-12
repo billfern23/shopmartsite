@@ -12,6 +12,7 @@ const Products = (history) => {
   const [flagClearance, setFlagClearance] = useState(false);
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
+  
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)

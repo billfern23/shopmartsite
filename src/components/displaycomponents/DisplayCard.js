@@ -9,7 +9,7 @@ const ProductCard = (props) => {
         style={{ width: "16rem", boxShadow: "0 1px 6px 0 rgb(32 33 36/ 28%)" }}
       >
         <Link to={`/product/${props.id}`}>
-          <Card.Img variant="top" src={props.img} style={{ height: "30vh" }} />{" "}
+          <Card.Img variant="top" src={props.img} style={{ height: "30vh", width:"100%" }} />{" "}
         </Link>
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
@@ -55,7 +55,7 @@ const ProductCard = (props) => {
             )}
 
             {props.category === "Clearance" ? props.bestSeller === true ? "" : <br /> : ""}
-         
+            {props.category !== "Clearance" ? props.bestSeller === true ? "" : <br /> : ""}
         </Card.Body>
       </Card>
       </div>
