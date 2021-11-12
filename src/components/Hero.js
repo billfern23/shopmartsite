@@ -67,7 +67,7 @@ const Hero = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
       <div style={{ width: "79%" }}>
         <Slider
           {...settings}

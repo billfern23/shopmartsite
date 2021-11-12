@@ -44,16 +44,16 @@ const Headers = () => {
                     </Link> <br />
       </div>
 
+<Container className="justify-content-center">
+      <Row className="g-4" > 
 
-      <Row className="g-4"> 
-
-<Navbar collapseOnSelect expand="lg md xxl">
+<Navbar collapseOnSelect expand="lg md xxl" >
 <Navbar.Brand as={Link} to="/">
   <Col xs={5} sm ={2}  md={5} lg={5} xl ={4}	xxl ={4} >
   <Image src={Logo} style={{ width: "28vh", height: "30vh" }} />
   </Col>
   </Navbar.Brand>
-  <Col xs={8} sm ={5}  md={4} lg={4} xl ={4}	xxl ={4}>
+  <Col xs={8} sm ={5}  md={4} lg={5} xl ={4}	xxl ={4} style={{padding:"16px"}}>
   <div
     style={{
       border: "red 1px solid",
@@ -63,7 +63,7 @@ const Headers = () => {
       
     }}
   >
-    <Form className="">
+    <Form className="" >
       <InputGroup>
         <Form.Control
           type="search"
@@ -96,7 +96,7 @@ const Headers = () => {
       <Nav.Link
         as={Link}
         to="/Register"
-        style={{ color: "#EE0000", fontWeight: "bold", fontSize:"20px", paddingRight:"75px" }}
+        style={{ color: "#EE0000", fontWeight: "bold", fontSize:"20px", paddingRight:"45px" }}
       >
         Register
       </Nav.Link>
@@ -120,7 +120,7 @@ const Headers = () => {
 
 </Row>
 
-     
+</Container> 
 
 
       <Nav

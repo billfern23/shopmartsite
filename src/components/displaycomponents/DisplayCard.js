@@ -6,10 +6,10 @@ const ProductCard = (props) => {
     <Col>
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Card
-        style={{ width: "16rem", boxShadow: "0 1px 6px 0 rgb(32 33 36/ 28%)" }}
+        style={{ width: "17rem", boxShadow: "0 1px 6px 0 rgb(32 33 36/ 28%)" }}
       >
         <Link to={`/product/${props.id}`}>
-          <Card.Img variant="top" src={props.img} style={{ height: "30vh", width:"100%" }} />{" "}
+          <Card.Img variant="top" src={props.img} style={{ height: "18vh", width:"100%" }} />{" "}
         </Link>
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
