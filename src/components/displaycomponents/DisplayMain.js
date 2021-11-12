@@ -105,6 +105,7 @@ const DisplayMain = (props) => {
       <br />
 
       <Row xs={1} sm ={2}  md={2} lg={4} className="g-4">
+      
         {displayProducts.map((product) => (
           <DisplayCard
             key={product._id}
@@ -118,6 +119,7 @@ const DisplayMain = (props) => {
             currentpage={currentPage}
           />
         ))}
+        
       </Row>
       <br />
 

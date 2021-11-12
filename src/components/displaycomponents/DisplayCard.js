@@ -4,8 +4,9 @@ import { AiFillStar } from "react-icons/ai";
 const ProductCard = (props) => {
   return (
     <Col>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Card
-        style={{ width: "18rem", boxShadow: "0 1px 6px 0 rgb(32 33 36/ 28%)" }}
+        style={{ width: "16rem", boxShadow: "0 1px 6px 0 rgb(32 33 36/ 28%)" }}
       >
         <Link to={`/product/${props.id}`}>
           <Card.Img variant="top" src={props.img} style={{ height: "30vh" }} />{" "}
@@ -55,6 +56,7 @@ const ProductCard = (props) => {
          
         </Card.Body>
       </Card>
+      </div>
     </Col>
   );
 };
