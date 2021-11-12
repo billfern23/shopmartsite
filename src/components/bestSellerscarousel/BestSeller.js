@@ -23,8 +23,8 @@ const BestSeller = () => {
 
   var settings = {
     autoplay: false,
-    infinite: false,
- 
+    infinite: true,
+    speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -48,7 +48,7 @@ const BestSeller = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 1,
         },
