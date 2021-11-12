@@ -53,7 +53,7 @@ const Headers = () => {
   <Image src={Logo} style={{ width: "28vh", height: "30vh" }} />
   </Col>
   </Navbar.Brand>
-  <Col xs={8} sm ={5}  md={4} lg={5} xl ={4}	xxl ={4} style={{padding:"16px"}}>
+  <Col xs={9} sm ={5}  md={5} lg={5} xl ={4}	xxl ={4} style={{padding:"16px"}}>
   <div
     style={{
       border: "red 1px solid",
@@ -67,7 +67,7 @@ const Headers = () => {
       <InputGroup>
         <Form.Control
           type="search"
-          placeholder="Search Products..."
+          placeholder="Search"
           className="me-2"
           aria-label="Search"
           style={{ border: "red 1px solid", borderRadius: "10px" }}
@@ -86,7 +86,7 @@ const Headers = () => {
 
   </Col>
 
-  <Col xs={3} sm ={2}  md={2} lg={3} xl ={4}	xxl ={4}>
+  <Col xs={3} sm ={2}  md={1} lg={3} xl ={4}	xxl ={4}>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
   <Navbar.Collapse id="responsive-navbar-nav">

@@ -9,7 +9,7 @@ const Category = (props) => {
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
   const [tempArrayProducts, setTempArrayProducts] = useState([])
-  
+  const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
@@ -70,7 +70,7 @@ const Category = (props) => {
     const tempBestsellers = products.filter(
       (product1) => product1.bestSeller === true
     );
-
+    setTempArrayBestSeller([...tempBestsellers]);
     setbestSellerProducts([...tempBestsellers]);
     setFlagbestSellerProducts(true);
   };
@@ -87,7 +87,7 @@ const Category = (props) => {
 
   
      if(flagbestSellerProducts){
-      bestsellers()
+      setbestSellerProducts([...tempArrayBestSeller])
     }
     else {
     

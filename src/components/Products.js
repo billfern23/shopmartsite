@@ -13,6 +13,8 @@ const Products = (history) => {
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
   const [tempArrayProducts, setTempArrayProducts] = useState([])
+  const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
+  const [tempArrayClearance, settempArrayClearance] = useState([])
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
@@ -80,7 +82,8 @@ const Products = (history) => {
     const tempClearance = products.filter(
       (product1) => product1.category === "Clearance"
     );
-
+    
+    settempArrayClearance([...tempClearance]);
     setClearanceProducts([...tempClearance]);
     setFlagClearance(true);
   };
@@ -90,7 +93,8 @@ const Products = (history) => {
     const tempBestsellers = products.filter(
       (product1) => product1.bestSeller === true
     );
-
+    
+    setTempArrayBestSeller([...tempBestsellers]);
     setbestSellerProducts([...tempBestsellers]);
     setFlagbestSellerProducts(true);
   };
@@ -106,10 +110,10 @@ const Products = (history) => {
   const clearAllFilter = () => {
 
     if(flagClearance){
-      clearance()
+      setClearanceProducts([...tempArrayClearance]);
     }
     else if(flagbestSellerProducts){
-      bestsellers()
+      setbestSellerProducts([...tempArrayBestSeller])
     }
     else {
     
