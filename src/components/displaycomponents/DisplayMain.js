@@ -32,8 +32,9 @@ const DisplayMain = (props) => {
   return (
     <Container
       style={{
-        background: "linear-gradient(rgba(250,1,2,0.2),transparent)",
-        backgroundColor: "#F9EFF5",
+        background: "linear-gradient(#C00000, white)",
+       
+       
       }}
     >
       <br />

@@ -30,6 +30,7 @@ const PaginationCard = (props) => {
             totalpage={totalpage}
             key={totalpage}
             changePage={props.changePage}
+            currentPage = {props.currentpage}
           />
         ))}
 
@@ -48,6 +49,8 @@ const PaginationCard = (props) => {
           }}
         />
       </Pagination>
+
+      
     </div>
   );
 };

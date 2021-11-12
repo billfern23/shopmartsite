@@ -2,7 +2,7 @@ import { Pagination } from "react-bootstrap";
 
 const PaginationItem = (props) => {
   return (
-    <Pagination.Item
+    <Pagination.Item active={props.totalpage === props.currentPage}
       onClick={() => {
         props.changePage(props.totalpage);
       }}
