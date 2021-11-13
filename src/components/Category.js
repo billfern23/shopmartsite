@@ -10,7 +10,7 @@ const Category = (props) => {
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
   const [tempArrayProducts, setTempArrayProducts] = useState([])
   const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
-
+  const [xFlag, setxflag] = useState(false)
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
       .then((response) => response.json())
@@ -22,7 +22,7 @@ const Category = (props) => {
       .catch((err) => {
         console.log(`err ${err}`);
       });
-  }, [props.category, location]);
+  }, [props.category, location,  xFlag]);
 
   const ascending = () => {
     
@@ -90,7 +90,7 @@ const Category = (props) => {
       setbestSellerProducts([...tempArrayBestSeller])
     }
     else {
-    
+      setxflag(!xFlag)
       setTempArrayProducts([...products]);
     }
   }

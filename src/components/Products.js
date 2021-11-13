@@ -15,22 +15,25 @@ const Products = (history) => {
   const [tempArrayProducts, setTempArrayProducts] = useState([])
   const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
   const [tempArrayClearance, settempArrayClearance] = useState([])
+  const [xFlag, setxflag] = useState(false)
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
       .then((json) => {
         setProducts(json.Products);
         setTempArrayProducts(json.Products)
-        
+    
         setFlagClearance(false);
         setFlagbestSellerProducts(false);
       })
       .catch((err) => {
         console.log(`err ${err}`);
       });
-  }, [location]);
+  }, [location, xFlag]);
 
   const ascending = () => {
+
+   
     let ascending = [];
     if (flagClearance) {
       ascending = clearanceProducts.sort((product1, product2) =>
@@ -46,10 +49,13 @@ const Products = (history) => {
       ascending = tempArrayProducts.sort((product1, product2) =>
         product1.price > product2.price ? 1 : -1
       );
+      
       setTempArrayProducts([...ascending]);
+      
+      
     }
   };
-
+  
   const descending = () => {
     let descending = [];
     if (flagClearance) {
@@ -73,6 +79,7 @@ const Products = (history) => {
         )
         .reverse();
         setTempArrayProducts([...descending]);
+       
     }
   };
 
@@ -116,10 +123,11 @@ const Products = (history) => {
       setbestSellerProducts([...tempArrayBestSeller])
     }
     else {
-    
+      setxflag(!xFlag)
       setTempArrayProducts([...products]);
     }
   }
+  
   if (category) {
     return <Category category={category} />;
   } else {
