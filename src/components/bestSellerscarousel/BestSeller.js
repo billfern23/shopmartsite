@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Previousbutn from "../Previousbutn.js";
-import "../../css/BestSellers.css";
+import "../../assests/css/BestSellers.css";
 import BestSellerCard from "./BestSellerCard";
 import Nextbtn from "../Nextbtn";
 import { useEffect, useState } from "react";

@@ -1,4 +1,4 @@
-import "../css/Register.css";
+import "../assests/css/Register.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import FacebookLogin from "react-facebook-login";
 import { FaFacebook } from "react-icons/fa";

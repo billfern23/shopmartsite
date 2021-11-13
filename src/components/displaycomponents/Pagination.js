@@ -1,6 +1,6 @@
 import PaginationItem from "./PaginationItem";
 import { Pagination } from "react-bootstrap";
-import "../../css/Pagination.css";
+import "../../assests/css/Pagination.css";
 const PaginationCard = (props) => {
   const TotalPages = Math.ceil(props.products.length / props.productsperPage);
   const totalPagesArray = [];

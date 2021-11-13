@@ -1,9 +1,9 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Previousbutn from "./Previousbutn.js";
-import "../css/BestSellers.css";
-import Nextbtn from "./Nextbtn";
+import Previousbutn from "../components/Previousbutn.js";
+import "../assests/css/BestSellers.css";
+import Nextbtn from "../components/Nextbtn";
 import HotDeals from "../assests/images/Hot.png";
 import Phone from "../assests/images/Phone.png";
 import TV from "../assests/images/TV.png";

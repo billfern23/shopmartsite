@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import CategoriesContext from "../context/CategoriesContext";
-import ProductCitem from "./CategoriesMain/ProductCategoryItem";
+import CategoriesContext from "../../context/CategoriesContext";
+import ProductCitem from "./ProductCategoryItem";
 import { Container, Row } from "react-bootstrap";
-import "../css/Category.css";
+
 
 const ProductCategories = () => {
   const { productcategory } = useContext(CategoriesContext);

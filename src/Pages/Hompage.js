@@ -1,6 +1,6 @@
-import ProductCategories from '../components/ProductCategories'
+import ProductCategories from '../components/CategoriesTiles/ProductCategories'
 import BestSeller from '../components/bestSellerscarousel/BestSeller'
-import Hero from '../components/Hero'
+import Hero from '../Hero/Hero'
 
 const Hompage = () => {
 
