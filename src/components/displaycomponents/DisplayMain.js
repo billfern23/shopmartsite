@@ -23,7 +23,12 @@ const DisplayMain = (props) => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [location, props.flagClearance, props.flagbestSellerProducts]);
+    
+  }, [location, props.flagClearance,
+     props.flagbestSellerProducts,
+      props.xFlag, 
+      props.bestsellers,
+    props.clearance]);
 
   const changePage = (number) => {
     setCurrentPage(number);

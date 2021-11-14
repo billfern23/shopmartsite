@@ -77,6 +77,7 @@ const BestSeller = () => {
   return (
     
     <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
+      
       <div style={{ width: "80%", borderRadius: "10px" }}>
         <span style={{ color: "#EE0000", fontSize: "38px" }}>Best Sellers</span>
         <br />

@@ -120,6 +120,7 @@ const Products = (history) => {
       setClearanceProducts([...tempArrayClearance]);
     }
     else if(flagbestSellerProducts){
+      
       setbestSellerProducts([...tempArrayBestSeller])
     }
     else {
@@ -166,6 +167,8 @@ const Products = (history) => {
           flagClearance={flagClearance}
           flagbestSellerProducts={flagbestSellerProducts}
           clearAllFilter={clearAllFilter}
+          xFlag={xFlag}
+          tempArrayProducts={tempArrayProducts}
         />
       </>
     );

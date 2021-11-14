@@ -124,7 +124,9 @@ const Category = (props) => {
         turnOffFlags={turnOffFlags}
         flagClearance={flagClearance}
         flagbestSellerProducts={flagbestSellerProducts}
-      clearAllFilter={clearAllFilter}
+        clearAllFilter={clearAllFilter}
+        xFlag={xFlag}
+        tempArrayProducts={tempArrayProducts}
       />
     </>
   );
