@@ -6,7 +6,8 @@ import "../../assests/css/BestSellers.css";
 import BestSellerCard from "./BestSellerCard";
 import Nextbtn from "../Nextbtn";
 import { useEffect, useState } from "react";
-
+//css used to target components after they have loaded in html rather then looking for the back functions
+//best seller carousel, get best sellers useEffect no call back function because not needed
 const BestSeller = () => {
   const [bestSellers, setBestSellers] = useState([]);
 
@@ -20,6 +21,8 @@ const BestSeller = () => {
         console.log(`err ${err}`);
       });
   }, []);
+
+  //settings for react-slick
 
   var settings = {
     autoplay: false,
@@ -76,16 +79,18 @@ const BestSeller = () => {
 
   return (
     
-    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
-      
+    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>      
       <div style={{ width: "80%", borderRadius: "10px" }}>
+                  {/*Put best sellers on top at the start of carousel*/}
         <span style={{ color: "#EE0000", fontSize: "38px" }}>Best Sellers</span>
         <br />
+                  {/* react slick slider set settings call my custom buttons*/}
         <Slider
           {...settings}
           prevArrow={<Previousbutn />}
           nextArrow={<Nextbtn />}
         >
+          {/* call best seller card and map each other*/}
           {bestSellers.map((bestseller) => (
             <BestSellerCard
               key={bestseller._id}

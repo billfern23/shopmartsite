@@ -1,9 +1,8 @@
 import { Card, Image, Col } from "react-bootstrap";
-
 import halfoff from "../../assests/images/50.png";
 import React from "react";
 import { Link } from "react-router-dom";
-
+// this file returns a cateogry as card, but generates images for each cateogry dynamically because img is not retrieved from api.
 const ProductCategoryItem = (props) => {
   return (
     <Col>
@@ -15,6 +14,7 @@ const ProductCategoryItem = (props) => {
         }}
       >
         <Link to={`/products?category=${props.category}`}>
+          {/* Complex if statement multiple true or false to create different images depending on the category recieved.*/}
           <Image
             src={
               props.category === "Home Furniture"
@@ -42,7 +42,7 @@ const ProductCategoryItem = (props) => {
             textDecoration: "none",
           }}
         >
-          {" "}
+         
           {props.category}
         </Link>
       </Card>

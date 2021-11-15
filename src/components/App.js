@@ -10,7 +10,8 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./Footer"
 import CategoriesContext from "../context/CategoriesContext";
-
+//Root file for all components, everything thing is interjected from this file
+//put header and footer here to decrease imports in other file every page has to have them.
 function App() {
   const [productcategory, setProductcategory] = useState([]);
 

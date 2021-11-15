@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import Category from "./Category";
 import { useLocation } from "react-router-dom";
 import DisplayMain from "./displaycomponents/DisplayMain";
-
-const Products = (history) => {
+// this is the main products file, when the url hits this is the component that checks everything. even with category
+const Products = () => {
   const location = useLocation();
   const search = new URLSearchParams(location.search);
-  const category = search.get("category");
+  const category = search.get("category"); //searches for category params
   const [products, setProducts] = useState([]);
   const [clearanceProducts, setClearanceProducts] = useState([]);
   const [flagClearance, setFlagClearance] = useState(false);
@@ -16,6 +16,7 @@ const Products = (history) => {
   const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
   const [tempArrayClearance, settempArrayClearance] = useState([])
   const [xFlag, setxflag] = useState(false)
+  //xflag has been explained properly in Category, but it is used to reset all arrays to original
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
@@ -31,6 +32,8 @@ const Products = (history) => {
       });
   }, [location, xFlag]);
 
+
+//sort ascending bestsellers, clearance or original
   const ascending = () => {
 
    
@@ -56,6 +59,7 @@ const Products = (history) => {
     }
   };
   
+  //set descending clearance, bestSellers or original
   const descending = () => {
     let descending = [];
     if (flagClearance) {
@@ -83,6 +87,7 @@ const Products = (history) => {
     }
   };
 
+  //filter original array for clearance category
   const clearance = () => {
     setFlagbestSellerProducts(false);
 
@@ -95,6 +100,7 @@ const Products = (history) => {
     setFlagClearance(true);
   };
 
+  //filter original array for bestsellers
   const bestsellers = () => {
     setFlagClearance(false);
     const tempBestsellers = products.filter(
@@ -106,6 +112,8 @@ const Products = (history) => {
     setFlagbestSellerProducts(true);
   };
 
+  //load this when you want to go from best sellers to all products
+
   const turnOffFlags = () => {
     setFlagClearance(false);
     setFlagbestSellerProducts(false);
@@ -114,6 +122,7 @@ const Products = (history) => {
     setTempArrayProducts([...products]);
   };
 
+  //this manipulates xflag because when you sort, it sorts the original array. 
   const clearAllFilter = () => {
 
     if(flagClearance){
@@ -129,6 +138,7 @@ const Products = (history) => {
     }
   }
   
+  // if there is a category take switch to this component else go to display main, pass all necassary flags and components
   if (category) {
     return <Category category={category} />;
   } else {

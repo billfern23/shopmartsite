@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap"
-
+//file contains static covid policy
 const CovidPolicyPage = () => {
     return (
         <Container>

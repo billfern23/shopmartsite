@@ -13,6 +13,8 @@ import Couch from "../assests/images/Couch.png";
 import Camera from "../assests/images/Camera.png";
 import Tshirt from "../assests/images/tshirt.png";
 import Blanket from "../assests/images/Blanket.png";
+
+//file contains standard react-slick slideshow, nothing fancy
 const Hero = () => {
   var settings = {
     autoplay: true,

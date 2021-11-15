@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import DisplayMain from "./displaycomponents/DisplayMain";
 import { useLocation } from "react-router-dom";
-
+// this file handles all when user wants to look at products from a specific categroy.
+//passes values to display main
 const Category = (props) => {
   const [products, setProducts] = useState([]);
   const location = useLocation();
-  const [flagClearance, setFlagClearance] = useState(false);
+  const [flagClearance, setFlagClearance] = useState(false); // you need this to turn it off just in case
   const [bestSellerProducts, setbestSellerProducts] = useState([]);
   const [flagbestSellerProducts, setFlagbestSellerProducts] = useState(false);
   const [tempArrayProducts, setTempArrayProducts] = useState([])
   const [tempArrayBestSeller, setTempArrayBestSeller] = useState([])
   const [xFlag, setxflag] = useState(false)
+  //component forced to reload on location, props.category, location and xflag. 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products?category=${props.category}`)
       .then((response) => response.json())
@@ -24,6 +26,7 @@ const Category = (props) => {
       });
   }, [props.category, location,  xFlag]);
 
+  //function for ascending, work with bestsellers or all products
   const ascending = () => {
     
     let ascending = [];
@@ -42,7 +45,7 @@ const Category = (props) => {
     }
    
   };
-
+  //function for descending, work with bestsellers or all products
   const descending = () => {
     
     let descending = [];
@@ -65,6 +68,7 @@ const Category = (props) => {
   
   };
 
+  //filter original array for best sellers
   const bestsellers = () => {
     setFlagClearance(false);
     const tempBestsellers = products.filter(
@@ -75,13 +79,18 @@ const Category = (props) => {
     setFlagbestSellerProducts(true);
   };
 
+  //trun of all flags
   const turnOffFlags = () => {
     setFlagClearance(false);
     setFlagbestSellerProducts(false);
     
     setTempArrayProducts([...products]);
   };
-
+//clear all filter is designed for ascending and descending for all products
+//because even with a temp array react with sort sorts the original array not the temporary one.
+//creating two arrays react updates both because they are set at the same time
+//this was my solution to fix it. this flag triggers a complete reload of the data and the best seller flag sets it to original best
+//seller array.
 
   const clearAllFilter = () => {
 

@@ -2,19 +2,10 @@
 
     width: 47px;
     height: 104px;
-  
-
-    
-
 }
 .slick-arrow.slick-next{
-   
-
     width: 47px;
     height: 104px;
-  
-
-
 }
 
 .slick-prev{
@@ -24,18 +15,12 @@
     right: -50px;
 }
 
-
-
 .slick-prev::before, .slick-next::before{
     display:none;
     content: "";
 }
 
-.onout:hover{
-    transform: scale(1.6);
-    }
-
-    .slick-slide {
+.slick-slide {
         margin-left:0px;
         margin-right:0px;
      }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { AiFillStar } from "react-icons/ai";
 import { FaStarHalfAlt } from "react-icons/fa";
+//file used to describe a product description by id, pulls id from the url and goes from there
 const Description = () => {
   const { id } = useParams();
 
@@ -15,7 +16,7 @@ const Description = () => {
     bestSeller: true,
     picurl: "",
   });
-
+//call reload everytime the id changes.
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/product/${id}`)
       .then((response) => response.json())

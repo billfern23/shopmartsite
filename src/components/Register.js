@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import FacebookLogin from "react-facebook-login";
 import { FaFacebook } from "react-icons/fa";
 import { useState } from "react";
-
+// this file contains all the registration component, its standard nothing fancy
 const Register = () => {
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
@@ -265,7 +265,7 @@ const Register = () => {
           <Row>
             <div className="d-grid gap-2">
               <Button
-                style={{color:"white",fontWeight:"600", fontSize:"25px", background:"red", border:"1px solid red"}}
+                style={{color:"white",fontWeight:"600", fontSize:"25px", background:"#EE0000", border:"1px solid red"}}
                 size="sm"
                 type="button"
                 onClick={() => {
