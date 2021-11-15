@@ -1,18 +1,18 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Previousbutn from "../components/Previousbutn.js";
-import "../assests/css/BestSellers.css";
-import Nextbtn from "../components/Nextbtn";
-import HotDeals from "../assests/images/Hot.png";
-import Phone from "../assests/images/Phone.png";
-import TV from "../assests/images/TV.png";
-import headPhones from "../assests/images/HeadPhones.png";
-import PlayBoy from "../assests/images/PlayBoy.png";
-import Couch from "../assests/images/Couch.png";
-import Camera from "../assests/images/Camera.png";
-import Tshirt from "../assests/images/tshirt.png";
-import Blanket from "../assests/images/Blanket.png";
+import Previousbutn from "../Previousbutn.js";
+import "../../assests/css/BestSellers.css";
+import Nextbtn from "../Nextbtn";
+import HotDeals from "../../assests/images/Hot.png";
+import Phone from "../../assests/images/Phone.png";
+import TV from "../../assests/images/TV.png";
+import headPhones from "../../assests/images/HeadPhones.png";
+import PlayBoy from "../../assests/images/PlayBoy.png";
+import Couch from "../../assests/images/Couch.png";
+import Camera from "../../assests/images/Camera.png";
+import Tshirt from "../../assests/images/tshirt.png";
+import Blanket from "../../assests/images/Blanket.png";
 
 //file contains standard react-slick slideshow, nothing fancy
 const Hero = () => {

@@ -1,6 +1,6 @@
 import ProductCategories from '../components/CategoriesTiles/ProductCategories'
 import BestSeller from '../components/bestSellerscarousel/BestSeller'
-import Hero from '../Hero/Hero'
+import Hero from '../components/Hero/Hero'
 //file renders product cateogories in main page, best seller
 const Hompage = () => {
 
