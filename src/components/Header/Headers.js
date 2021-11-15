@@ -142,6 +142,8 @@ const Headers = () => {
             <Nav.Link eventKey={`/`} active={
               location.pathname === "/products" ? false : 
               location.pathname === "/Register" ? false : 
+              location.pathname === "/aboutus" ? false : 
+              location.pathname === "/covidpolicy" ? false : 
             true 
             } as={Link} to="/" style={{  fontWeight: "bold" }}>Home</Nav.Link>
         </Nav.Item>
