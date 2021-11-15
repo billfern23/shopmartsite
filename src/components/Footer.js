@@ -10,6 +10,7 @@ const Footer = () => {
         <br />
         
         <footer style={{background:"#C00000"}}>
+        <br />
 <Container >
   <Row sm ={3}  md={3} lg={3} className="justify-content-md-center" style={{marginLeft:"10px" }}  >
         <Col xs={3} >
