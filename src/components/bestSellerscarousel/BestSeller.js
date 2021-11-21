@@ -5,22 +5,25 @@ import Previousbutn from "../Previousbutn.js";
 import "../../assests/css/BestSellers.css";
 import BestSellerCard from "./BestSellerCard";
 import Nextbtn from "../Nextbtn";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import LoadingContext from "../../context/LoadingContext";
 //css used to target components after they have loaded in html rather then looking for the back functions
 //best seller carousel, get best sellers useEffect no call back function because not needed
 const BestSeller = () => {
   const [bestSellers, setBestSellers] = useState([]);
-
+  const {Loading, setLoading} = useContext(LoadingContext);
   useEffect(() => {
+    setLoading(true)
     fetch(`${process.env.REACT_APP_BACKEND}/products?bestseller=yes`)
       .then((response) => response.json())
       .then((json) => {
         setBestSellers(json.data);
+        setLoading(false)
       })
       .catch((err) => {
         console.log(`err ${err}`);
       });
-  }, []);
+  }, [setLoading]);
 
   //settings for react-slick
 
@@ -79,7 +82,8 @@ const BestSeller = () => {
 
   return (
     
-    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>      
+    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}> 
+    {Loading === true ? "" :      
       <div style={{ width: "80%", borderRadius: "10px" }}>
                   {/*Put best sellers on top at the start of carousel*/}
         <span style={{ color: "#EE0000", fontSize: "38px" }}>Best Sellers</span>
@@ -103,6 +107,7 @@ const BestSeller = () => {
           ))}
         </Slider>
       </div>
+}
     </div>
   );
 };

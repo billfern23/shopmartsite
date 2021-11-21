@@ -2,8 +2,12 @@ import {Container, Row,Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineFacebook, AiFillTwitterSquare } from "react-icons/ai";
 import { FaTiktok, FaInstagram } from "react-icons/fa";
+import LoadingContext from "../context/LoadingContext";
+import {useContext} from "react"
+
 //This file contains footer.
 const Footer = () => {
+    const {Loading} = useContext(LoadingContext);
     return (
         <>
         <br />
@@ -12,6 +16,7 @@ const Footer = () => {
         <footer style={{background:"#C00000"}}>
         <br />
 <Container >
+{Loading === true ? "" :  
   <Row sm ={3}  md={3} lg={3} className="justify-content-md-center" style={{marginLeft:"10px" }}  >
         <Col xs={3} >
         <h2 style={{color:"white", fontSize: "calc(1em + 1vw)", paddingLeft:"1px"}}>Buy</h2>
@@ -39,6 +44,7 @@ const Footer = () => {
 
 
   </Row>
+}
       </Container>  
           
         </footer>

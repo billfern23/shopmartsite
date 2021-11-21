@@ -13,9 +13,11 @@ import Couch from "../../assests/images/Couch.png";
 import Camera from "../../assests/images/Camera.png";
 import Tshirt from "../../assests/images/tshirt.png";
 import Blanket from "../../assests/images/Blanket.png";
-
+import LoadingContext from "../../context/LoadingContext";
+import {  useContext } from "react";
 //file contains standard react-slick slideshow, nothing fancy
 const Hero = () => {
+  const {Loading} = useContext(LoadingContext);
   var settings = {
     autoplay: true,
     infinite: true,
@@ -69,8 +71,10 @@ const Hero = () => {
   };
 
   return (
+
     <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
       <div style={{ width: "79%" }}>
+        {Loading === true ? "" : 
         <Slider
           {...settings}
           prevArrow={<Previousbutn />}
@@ -140,8 +144,10 @@ const Hero = () => {
             />
           </div>
         </Slider>
+        }
       </div>
     </div>
+    
   );
 };
 

@@ -10,15 +10,21 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./Footer"
 import CategoriesContext from "../context/CategoriesContext";
+import LoadingContext from "../context/LoadingContext";
 //Root file for all components, everything thing is interjected from this file
 //put header and footer here to decrease imports in other file every page has to have them.
 function App() {
   const [productcategory, setProductcategory] = useState([]);
-
+  const [Loading, setLoading] = useState(true)
   return (
     <Router>
       <CategoriesContext.Provider
         value={{ productcategory, setProductcategory }}
+       
+      >
+         <LoadingContext.Provider
+        value={{ Loading, setLoading }}
+       
       >
         <Switch>
           <Route exact path="/">
@@ -55,6 +61,7 @@ function App() {
           </Route>
 
         </Switch>
+       </LoadingContext.Provider>
       </CategoriesContext.Provider>
     </Router>
   );

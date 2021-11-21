@@ -17,6 +17,7 @@ const Products = () => {
   const [tempArrayClearance, settempArrayClearance] = useState([])
   const [xFlag, setxflag] = useState(false)
   //xflag has been explained properly in Category, but it is used to reset all arrays to original
+  
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/products`)
       .then((response) => response.json())
