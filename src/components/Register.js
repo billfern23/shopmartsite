@@ -2,7 +2,8 @@ import "../assests/css/Register.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import FacebookLogin from "react-facebook-login";
 import { FaFacebook } from "react-icons/fa";
-import { useState } from "react";
+import { useState} from "react";
+
 // this file contains all the registration component, its standard nothing fancy
 const Register = () => {
   const [fname, setfname] = useState("");
@@ -35,7 +36,7 @@ const Register = () => {
 
   const [homephoneError, setHomePhoneError] = useState([]);
   const [homephoneflag, setHomephoneflag] = useState("");
-
+ 
   const validation = () => {
     setErrors(true);
     let checker = true;

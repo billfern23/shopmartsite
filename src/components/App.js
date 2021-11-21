@@ -35,6 +35,7 @@ function App() {
           <Route exact path="/register">
             <Header />
             <Registerpage />
+            <Footer />
           </Route>
           <Route path="/products">
             <Header />
