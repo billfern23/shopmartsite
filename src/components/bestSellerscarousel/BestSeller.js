@@ -13,7 +13,7 @@ const BestSeller = () => {
   const [bestSellers, setBestSellers] = useState([]);
   const {Loading, setLoading} = useContext(LoadingContext);
   useEffect(() => {
-    setLoading(true)
+ 
     fetch(`${process.env.REACT_APP_BACKEND}/products?bestseller=yes`)
       .then((response) => response.json())
       .then((json) => {

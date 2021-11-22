@@ -33,7 +33,7 @@ const Headers = () => {
   const {Loading, setLoading} = useContext(LoadingContext);
   //need setproductCategory to get rid of console log error, not really a dependency and not used for anything.
   useEffect(() => {
-    setLoading(true)
+  
     fetch (`${process.env.REACT_APP_BACKEND}/products/categories`)
       .then((response) => response.json())
       .then((json) => {

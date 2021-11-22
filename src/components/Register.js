@@ -36,7 +36,6 @@ const Register = () => {
 
   const [homephoneError, setHomePhoneError] = useState([]);
   const [homephoneflag, setHomephoneflag] = useState("");
- 
   const validation = () => {
     setErrors(true);
     let checker = true;
