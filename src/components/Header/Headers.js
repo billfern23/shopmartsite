@@ -39,6 +39,7 @@ const Headers = () => {
       .then((json) => {
         setProductcategory(json.categories);
         setLoading(false)
+      
       })
       .catch((err) => {
         console.log(`err ${err}`);

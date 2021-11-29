@@ -8,7 +8,7 @@ const BestSellerCard = (props) => {
       style={{
         textAlign: "center",
         margin: "20",
-        width: "100%",
+        width: "95%",
         background: "white",
         borderRadius: "10px",
         boxShadow: "0 2px 6px 0 grey",
@@ -20,7 +20,7 @@ const BestSellerCard = (props) => {
         style={{
        
           width: "100%",
-          height: "250px",
+          height: "22vh",
           paddingTop: "20px",
           objectFit: "fill",
         }}

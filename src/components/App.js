@@ -11,13 +11,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./Footer"
 import CategoriesContext from "../context/CategoriesContext";
 import LoadingContext from "../context/LoadingContext";
+import Scroll from "../components/Scroll.js"
 //Root file for all components, everything thing is interjected from this file
 //put header and footer here to decrease imports in other file every page has to have them.
 function App() {
   const [productcategory, setProductcategory] = useState([]);
   const [Loading, setLoading] = useState(true)
+
   return (
     <Router>
+      <Scroll />
       <CategoriesContext.Provider
         value={{ productcategory, setProductcategory }}
        
