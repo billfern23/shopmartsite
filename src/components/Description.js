@@ -55,7 +55,7 @@ const Description = () => {
 
         <Card style={{ width: "50rem",  alignItems: "center",
           justifyContent: "center" }}>
-          <Card.Img variant="top" src={product.picurl} />
+          <Card.Img variant="top" src={product.picurl} style={{objectFit:"contain", height:"50vh" }}/>
           <Card.Body>
             <Card.Title >  {product.name}   <br /> (
 

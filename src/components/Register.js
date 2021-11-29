@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { useState} from "react";
 
 // this file contains all the registration component, its standard nothing fancy
-const Register = () => {
+const Register = (props) => {
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
   const [email, setEmail] = useState("");
@@ -36,7 +36,9 @@ const Register = () => {
 
   const [homephoneError, setHomePhoneError] = useState([]);
   const [homephoneflag, setHomephoneflag] = useState("");
+ 
   const validation = () => {
+   
     setErrors(true);
     let checker = true;
     if (!fname) {
