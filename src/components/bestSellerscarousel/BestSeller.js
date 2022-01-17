@@ -103,6 +103,7 @@ const BestSeller = () => {
               category={bestseller.category}
               title={bestseller.name}
               price={bestseller.price}
+              
             />
           ))}
         </Slider>

@@ -8,7 +8,7 @@ const BestSellerCard = (props) => {
       style={{
         textAlign: "center",
         margin: "20",
-        width: "95%",
+        width: "100%",
         background: "white",
         borderRadius: "10px",
         boxShadow: "0 2px 6px 0 grey",
@@ -19,10 +19,12 @@ const BestSellerCard = (props) => {
         alt=""
         style={{
        
-          width: "100%",
+          width: "85%",
           height: "22vh",
           paddingTop: "20px",
+          paddingLeft:"60px",
           objectFit: "fill",
+          borderRadius:"20px"
         }}
       />
       <p style={{ fontWeight: "500", fontSize: "17px" }}>{props.title} </p>
