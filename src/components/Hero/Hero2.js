@@ -72,7 +72,7 @@ const Hero = () => {
 
   return (
 
-    <div style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
+    <div style={{ display: "flex", justifyContent: "center", margin: "20px"}}>
       <div style={{ width: "79%" }}>
         {Loading === true ? "" : 
         <Slider
@@ -80,67 +80,67 @@ const Hero = () => {
           prevArrow={<Previousbutn />}
           nextArrow={<Nextbtn />}
         >
-          <div>
+          <div styl>
             <img
               src={HotDeals}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%"}}
             />
           </div>
           <div>
             <img
               src={Phone}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%" }}
             />
           </div>
           <div>
             <img
               src={TV}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%" }}
             />
           </div>
           <div>
             <img
               src={headPhones}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%"}}
             />
           </div>
           <div>
             <img
               src={PlayBoy}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%" }}
             />
           </div>
           <div>
             <img
               src={Couch}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%" }}
             />
           </div>
           <div>
             <img
               src={Camera}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%"}}
             />
           </div>
           <div>
             <img
               src={Tshirt}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%"}}
             />
           </div>
           <div>
             <img
               src={Blanket}
               alt=""
-              style={{ width: "100%", height: "50vh", objectFit: "contain" }}
+              style={{ width: "100%" }}
             />
           </div>
         </Slider>

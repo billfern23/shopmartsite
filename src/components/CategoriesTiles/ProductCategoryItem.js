@@ -29,8 +29,8 @@ const ProductCategoryItem = (props) => {
                 ? halfoff
                 : ""
             }
-            style={{ height: "20vh", width: "100%", objectFit: "contain" }}
-            roundedCircle
+            style={{ height: "20vh", width: "100%", objectFit: "contain", borderRadius:"20px" }}
+            
           />
         </Link>
 

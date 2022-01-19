@@ -34,7 +34,7 @@ const BestSeller = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    centerMode:true,
+    centerMode:false,
     responsive: [
       {
         breakpoint: 1025,

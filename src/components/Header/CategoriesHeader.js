@@ -12,7 +12,7 @@ const CategoriesHeader = (props) => {
   };
     return (
         <Box sx={{ width: '100%', bgcolor: 'background.paper', color:"red", 
-        borderTop:"1px solid gray",
+      
         borderBottom:"1px solid gray"
         }}>
         <Tabs value={value} onChange={handleChange} centered

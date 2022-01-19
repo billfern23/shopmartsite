@@ -12,6 +12,7 @@ const BestSellerCard = (props) => {
         background: "white",
         borderRadius: "10px",
         boxShadow: "0 2px 6px 0 grey",
+        padding: "30px",
       }}
     >
       <Image
