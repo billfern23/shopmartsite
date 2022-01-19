@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "../Pages/Hompage";
 import Registerpage from "../Pages/Registerpage";
 import Header from "./Header/Headers";
+import Header2 from "./Header/headers2";
 import ProductsPage from "../Pages/Productspage";
 import DescriptionPage from "../Pages/DescriptionPage";
 import AboutUs from "../Pages/AboutUsPage";
@@ -32,6 +33,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Header />
+
             <Homepage />
             <Footer />
           </Route>
