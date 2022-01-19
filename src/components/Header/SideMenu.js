@@ -40,12 +40,7 @@ export default function SwipeableTemporaryDrawer(props) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
      <List>
-        <Menu>
-        <MenuItem >
-                    <Link to="/" style={{textDecoration:"none"}}>Home</Link>
-                </MenuItem>
-        </Menu>
-
+        
       <ListItem>
           <Typography variant="h5" style={{color:"#8B0000"}} >
 
@@ -94,8 +89,8 @@ export default function SwipeableTemporaryDrawer(props) {
 
       {props.productcategory.map((text, index)=>(
           
-            <ListItem>
-            <Link to={`/products?category=${text}`} style={{textDecoration:"none"}}>
+            <ListItem key={Math.floor(Math.random() * 100000)}>
+                <Link to={`/products?category=${text}`} style={{textDecoration:"none"}}>
             
             <ListItemIcon>
              {text === "Electronics"?  <MdHeadphonesBattery size={30} style={{color:"#ee352a"}}/>

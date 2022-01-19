@@ -1,19 +1,6 @@
 
-import {
-  Image,
-  InputGroup,
-  Navbar,
-  Container,
-  Nav,
-  Form,
-  Button,
-  Col,
-  Row,
-  Spinner
-} from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
-import Logo from "../../assests/images/Logo2.png";
+import {Spinner} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import CategoriesContext from "../../context/CategoriesContext";
 import LoadingContext from "../../context/LoadingContext";
@@ -25,9 +12,6 @@ import CategoriesHeader from "./CategoriesHeader";
 //headers is where the context api was first used to set all product categories. 
 
 const Headers = () => {
-  const location = useLocation();
-  const search = new URLSearchParams(location.search);
-  const categoryChecker = search.get("category"); //used for hiding or showing active links in navbar by looking it up in the url
   const { productcategory, setProductcategory } = useContext(CategoriesContext);
   const {Loading, setLoading} = useContext(LoadingContext);
   //need setproductCategory to get rid of console log error, not really a dependency and not used for anything.

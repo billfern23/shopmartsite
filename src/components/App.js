@@ -12,6 +12,7 @@ import Footer from "./Footer"
 import CategoriesContext from "../context/CategoriesContext";
 import LoadingContext from "../context/LoadingContext";
 import Scroll from "../components/Scroll.js"
+import Test from "../Pages/Test"
 //Root file for all components, everything thing is interjected from this file
 //put header and footer here to decrease imports in other file every page has to have them.
 function App() {
@@ -64,7 +65,11 @@ function App() {
 
             <Footer />
           </Route>
+          <Route exact path="/test">
 
+            <Header />
+            <Test />
+          </Route>
         </Switch>
        </LoadingContext.Provider>
       </CategoriesContext.Provider>

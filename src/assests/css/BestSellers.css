@@ -24,3 +24,24 @@
         margin-left:0px;
         margin-right:0px;
      }
+section#donate h3{
+  margin-top: 0;
+}
+
+ul.slick-dots{
+  bottom: 0;
+}
+
+
+
+section#donate h3{
+    margin-top: 0;
+  }
+  
+  ul.slick-dots{
+    bottom: 0;
+  }
+  
+  section.slick-dotted.slick-slider{
+    margin-bottom:0;
+  } 

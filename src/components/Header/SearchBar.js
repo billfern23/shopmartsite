@@ -8,13 +8,13 @@ import Stack from '@mui/material/Stack';
 const SearchBar = () => {
     var temp = []
     const [productsSearch, setProductSearch] = useState([])
-    const [productfound, setProductFound] = useState([])
-    const [searchProduct, setSearchProduct] = useState("")
+   
+    const [ setSearchProduct] = useState("")
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BACKEND}/products`)
           .then((response) => response.json())
           .then((json) => {
-            setProductFound(json.Products)
+           
               
               json.Products.forEach((e)=>{
                   e.id = e._id
@@ -33,13 +33,13 @@ const SearchBar = () => {
 
               })
               setProductSearch(temp)
-           console.log(temp)
+           
            
           })
           .catch((err) => {
             console.log(`err ${err}`);
           });
-      }, []);
+      }, [], temp);
 
     return (
         <form>
@@ -75,12 +75,5 @@ const SearchBar = () => {
     )
 }
 
-const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-    { label: 'The Dark Knight', year: 2008 },
-    { label: '12 Angry Men', year: 1957 },
-    { label: "Schindler's List", year: 1993 },
-    { label: 'Pulp Fiction', year: 1994 } ]
+
 export default SearchBar

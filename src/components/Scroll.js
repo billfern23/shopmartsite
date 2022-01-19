@@ -6,10 +6,10 @@ export default function ScrollToTop() {
 
   useEffect(() => {
 
-    let text = "/product";
+    
     
 
-          window.scrollTo(0, 300);
+         // window.scrollTo(0, 300);
       
     
   }, [pathname]);
