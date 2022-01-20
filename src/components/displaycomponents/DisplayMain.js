@@ -69,7 +69,7 @@ const DisplayMain = (props) => {
     
     <Container
       style={{
-        background: "linear-gradient(#C00000, white)",
+       border:'1px solid black'
        
        
       }}
