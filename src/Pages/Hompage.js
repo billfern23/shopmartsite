@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Banner from '../components/Hero/Banner'
 import Hero from '../components/Hero/Hero'
 import CategoriesTiles from '../components/CategoriesTiles/ProductCategories'
-import BestSeller from '../components/bestSellersCarousel/BestSeller.js'
+import BestSeller from '../components/bestSellersCarousel/BestSeller'
 import {  useContext } from "react";
 import LoadingContext from "../context/LoadingContext"
 const Item = styled(Paper)(({ theme }) => ({
