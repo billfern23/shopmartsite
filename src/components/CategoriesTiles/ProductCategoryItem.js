@@ -6,16 +6,11 @@ import { Link } from "react-router-dom";
 const ProductCategoryItem = (props) => {
   return (
     <Col>
-      <Card
-        style={{
-          width: "18rem",
-          textAlign: "center",
-          border: "1px solid white",
-        }}
-      >
+     
         <Link to={`/products?category=${props.category}`}>
           {/* Complex if statement multiple true or false to create different images depending on the category recieved.*/}
-          <Image
+          
+          <img rounded={true}
             src={
               props.category === "Home Furniture"
                 ? "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
@@ -29,7 +24,7 @@ const ProductCategoryItem = (props) => {
                 ? halfoff
                 : ""
             }
-            style={{ height: "20vh", width: "100%", objectFit: "contain", borderRadius:"20px" }}
+            style={{ height: "20vh", width: "100%",objectFit:"cover", borderRadius:"75%" }}
             
           />
         </Link>
@@ -45,7 +40,7 @@ const ProductCategoryItem = (props) => {
          
           {props.category}
         </Link>
-      </Card>
+    
     </Col>
   );
 };

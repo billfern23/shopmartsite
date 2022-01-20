@@ -7,6 +7,7 @@ import Banner from '../components/Hero/Banner'
 import Hero from '../components/Hero/Hero2'
 import CategoriesTiles from '../components/CategoriesTiles/ProductCategories'
 import BestSeller from '../components/bestSellersCarousel2/BestSeller2'
+import Footer from '../components/Footer'
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -16,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
    boxShadow: "none"
   }));
 
-const test = () => {
+const HomePage = () => {
     return (
         <Box sx={{ width: '100%' }}> 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
@@ -29,15 +30,16 @@ const test = () => {
         <Grid item xs={12} container justifyContent="center" alignItems="center">
           <Item><CategoriesTiles /></Item>
         </Grid>
+     
         <Grid item xs={12}>
           <Item><BestSeller /></Item>
         </Grid>
-        <Grid item xs={6}>
-          <Item>4</Item>
+        <Grid item xs={12}>
+          <Item><Footer /></Item>
         </Grid>
       </Grid>
     </Box>
     )
 }
 
-export default test
+export default HomePage

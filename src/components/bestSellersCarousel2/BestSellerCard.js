@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 //each time the array  refreshes.
 const BestSellerCard = (props) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, border:"1px #CDCDCD solid" }}>
     <CardMedia
         component="img"
         height="250"

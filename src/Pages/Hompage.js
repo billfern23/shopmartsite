@@ -7,7 +7,9 @@ import Banner from '../components/Hero/Banner'
 import Hero from '../components/Hero/Hero2'
 import CategoriesTiles from '../components/CategoriesTiles/ProductCategories'
 import BestSeller from '../components/bestSellersCarousel2/BestSeller2'
-
+import Footer from '../components/Footer'
+import {  useContext } from "react";
+import LoadingContext from "../context/LoadingContext"
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -16,9 +18,11 @@ const Item = styled(Paper)(({ theme }) => ({
    boxShadow: "none"
   }));
 
-const test = () => {
+const HomePage = () => {
+  const {Loading} = useContext(LoadingContext);
     return (
-        <Box sx={{ width: '100%' }}> 
+      <Box sx={{ width: '100%' }}> 
+      {Loading === true ? "" :  
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
       <Grid item xs={12} container justifyContent="center" alignItems="center">
           <Item><Banner /></Item>
@@ -29,12 +33,17 @@ const test = () => {
         <Grid item xs={12} container justifyContent="center" alignItems="center">
           <Item><CategoriesTiles /></Item>
         </Grid>
+     
         <Grid item xs={12}>
           <Item><BestSeller /></Item>
         </Grid>
+        <Grid item xs={12}>
+          <Item><Footer /></Item>
+        </Grid>
       </Grid>
+      }
     </Box>
     )
 }
 
-export default test
+export default HomePage

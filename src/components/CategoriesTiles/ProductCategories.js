@@ -20,10 +20,10 @@ const ProductCategories = () => {
         <span style={{ color: "black" }}>Shop By Departments</span>
       </h3>
       <br />
-      <Container>
+      <Container fluid>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ width: "90%" }}>
-            <Row xs={1} sm = {2} md={2} lg={3} xl ={5}	xxl ={5}className="g-4">
+          <div style={{ width: "95%" }}>
+            <Row xs={2} sm = {2} md={4} lg={4} xl ={4}	xxl ={4}className="g-4">
               {productcategory.map((category) => (
                 <ProductCitem
                   key={Math.floor(Math.random() * 100000)}

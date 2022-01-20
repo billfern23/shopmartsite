@@ -33,9 +33,8 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Header />
-
             <Homepage />
-            <Footer />
+         
           </Route>
           <Route exact path="/register">
             <Header />
