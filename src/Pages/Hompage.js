@@ -37,9 +37,7 @@ const HomePage = () => {
         <Grid item xs={12}>
           <Item><BestSeller /></Item>
         </Grid>
-        <Grid item xs={12}>
-          <Item><Footer /></Item>
-        </Grid>
+      
       </Grid>
       }
     </Box>
