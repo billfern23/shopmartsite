@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import FacebookLogin from "react-facebook-login";
 import { FaFacebook } from "react-icons/fa";
 import { useState} from "react";
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 // this file contains all the registration component, its standard nothing fancy
 const Register = (props) => {
@@ -139,8 +141,17 @@ const Register = (props) => {
     setUser(true);
   };
 
+  const paperStyle ={
+                    padding: '30px 20px', 
+                    width: "90%",
+                    margin: '20px auto'
+                  }
   return (
     <>
+    <Grid>
+      <Paper elevation={20} style={paperStyle}>
+      
+      
       <Container className="container center_div">
         <h1 className="row justify-content-center"> Create New Account </h1>
 
@@ -349,6 +360,8 @@ const Register = (props) => {
           </div>
         </div>
       </Container>
+      </Paper>
+    </Grid>
     </>
   );
 };

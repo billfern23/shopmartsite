@@ -8,6 +8,7 @@ const PaginationItem = (props) => {
     <Pagination.Item active={props.totalpage === props.currentPage}
       onClick={() => {
         props.changePage(props.totalpage);
+        window.scrollTo(0, 20);
       }}
     >
       {props.totalpage}

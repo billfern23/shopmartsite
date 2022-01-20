@@ -4,9 +4,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Banner from '../components/Hero/Banner'
-import Hero from '../components/Hero/Hero2'
+import Hero from '../components/Hero/Hero'
 import CategoriesTiles from '../components/CategoriesTiles/ProductCategories'
-import BestSeller from '../components/bestSellersCarousel2/BestSeller2'
+import BestSeller from '../components/bestSellersCarousel/BestSeller'
 import Footer from '../components/Footer'
 
 const Item = styled(Paper)(({ theme }) => ({

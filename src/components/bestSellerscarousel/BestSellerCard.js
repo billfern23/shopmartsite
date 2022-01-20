@@ -1,37 +1,33 @@
-import { Button, Image } from "react-bootstrap";
+import { Image,Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+
 //this file just returns the card by maping each category into a card like object so the carousel is just filled with cards,
 //each time the array  refreshes.
 const BestSellerCard = (props) => {
   return (
-    <div
-      style={{
-        textAlign: "center",
-        margin: "20",
-        width: "100%",
-        background: "white",
-        borderRadius: "10px",
-        boxShadow: "0 2px 6px 0 grey",
-        padding: "30px",
-      }}
-    >
-      <Image
-        src={props.img}
-        alt=""
-        style={{
-       
-          width: "85%",
-          height: "22vh",
-          paddingTop: "20px",
-          paddingLeft:"60px",
-          objectFit: "fill",
-          borderRadius:"20px"
-        }}
+    <Card sx={{ maxWidth: 345, border:"1px #CDCDCD solid" }}>
+    <CardMedia
+        component="img"
+        height="250"
+        width="100%"
+        image={props.img}
+        alt="green iguana"
       />
-      <p style={{ fontWeight: "500", fontSize: "17px" }}>{props.title} </p>
-      <p style={{ fontSize: "14px", color: "black" }}></p>
-      <p style={{ fontSize: "14px", color: "grey", fontWeight: "500" }}>
-        Price: ${props.price} <br />  <br />
+    <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Top Trending
+        </Typography>
+        <Typography variant="body2" color="common">
+        {props.title}
+        </Typography>
+        <Typography variant="body2" style={{color:"red"}}>
+         From ${props.price} 
+        </Typography>
+        <br />
         <Button variant="outline-danger">
           <Link
             to={`/product/${props.id}`}
@@ -44,10 +40,11 @@ const BestSellerCard = (props) => {
              More Details
           </Link>
         </Button>
-        <br />
-      </p>
-      <br />
-    </div>
+      </CardContent>
+
+      
+     
+    </Card>
   );
 };
 

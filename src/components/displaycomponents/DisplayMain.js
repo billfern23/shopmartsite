@@ -69,7 +69,7 @@ const DisplayMain = (props) => {
     
     <Container
       style={{
-       border:'1px solid black'
+       border:'1px solid red'
        
        
       }}
